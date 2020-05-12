@@ -1,0 +1,86 @@
+* {
+    box-sizing:border-box;
+    font-family:"Titillium Web", sans-serif;
+}
+
+::selection {
+    background-color:#ffd400;
+    color:#fff;
+}
+
+body {
+    background-color:#222;
+    color:#ccc;
+    height:100%;
+    margin:0;
+    overflow:hidden;
+    position:relative;
+}
+
+button {
+    background:none;
+    border:3px solid #ccc;
+    border-radius:8px;
+    color:#ccc;
+    cursor:pointer;
+    display:block;
+    font-size:2em;
+    font-weight:700;
+    padding:0.25em 1em;
+    transition:250ms all;
+}
+
+button:hover {
+    background-color:#ffd400;
+    border-color:#ffd400;
+    color:#000;
+}
+
+h1 {
+    border-bottom:5px dotted #333;
+    font-size:6em;
+    font-weight:normal;
+    line-height:1em;
+    margin:0 auto;
+    padding-bottom:0.25em;
+    text-align:center;
+    text-shadow:0 0 20px #000;
+}
+
+h1 .name {
+    color:#ffd400;
+    display:block;
+    font-size:0.97em;
+    font-weight:700;
+}
+
+html {
+    height:100%;
+}
+
+p {
+    font-size:2em;
+    margin:1em 0;
+    max-width:590px;
+    text-align:center;
+}
+
+#background {
+    background-color:#000;
+    height:100%;
+    position:absolute;
+    width:100%;
+}
+
+#landing {
+    align-items:center;
+    background:linear-gradient(transparent, #111118);
+    display:flex;
+    flex-direction:column;
+    height:100%;
+    justify-content:center;
+    padding:4em;
+    position:absolute;
+    top:0;
+    width:100%;
+}
