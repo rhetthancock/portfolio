@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Minesweeper WebApp</title>
+        <script src="Board.js"></script>
+        <script src="Cell.js"></script>
+        <script src="main.js"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <div id="wrapper">
+            <div id="sidebar">
+                <div class="logo">
+                    <span class="bubble">M</span>
+                    <span class="bubble">S</span>
+                    <span class="bubble">w</span>
+                    <span class="bubble">e</span>
+                    <span class="bubble">e</span>
+                    <span class="bubble">p</span>
+                    <span class="bubble">e</span>
+                    <span class="bubble">r</span>
+                </div>
+                <div id="menu">
+                    <button class="bubbles" id="newgame">
+                        <span class="bubble">N</span>
+                        <span class="bubble">e</span>
+                        <span class="bubble">w</span>
+                        <span class="bubble"> </span>
+                        <span class="bubble">G</span>
+                        <span class="bubble">a</span>
+                        <span class="bubble">m</span>
+                        <span class="bubble">e</span>
+                    </button>
+                    <button class="bubbles">
+                        <span class="bubble">C</span>
+                        <span class="bubble">o</span>
+                        <span class="bubble">n</span>
+                        <span class="bubble">t</span>
+                        <span class="bubble">r</span>
+                        <span class="bubble">o</span>
+                        <span class="bubble">l</span>
+                        <span class="bubble">s</span>
+                    </button>
+                    <button class="bubbles">
+                        <span class="bubble">S</span>
+                        <span class="bubble">e</span>
+                        <span class="bubble">t</span>
+                        <span class="bubble">t</span>
+                        <span class="bubble">i</span>
+                        <span class="bubble">n</span>
+                        <span class="bubble">g</span>
+                        <span class="bubble">s</span>
+                    </button>
+                </div>
+                <div id="settings">
+                    <div class="bubbles">
+                        <span class="bubble">x</span>
+                        <button class="bubble minus" id="x-minus">-</button>
+                        <span class="bubble" id="x-tens">1</span>
+                        <span class="bubble" id="x-singles">5</span>
+                        <button class="bubble plus" id="x-plus">+</button>
+                    </div>
+                    <div class="bubbles">
+                        <span class="bubble">y</span>
+                        <button class="bubble minus" id="y-minus">-</button>
+                        <span class="bubble" id="y-tens">1</span>
+                        <span class="bubble" id="y-singles">5</span>
+                        <button class="bubble plus" id="y-plus">+</button>
+                    </div>
+                </div>
+            </div>
+            <div id="main">
+                <div class="hud">
+                    <div class="timer">
+                        <span class="num">T</span>
+                        <span class="num" id="sec-h">0</span>
+                        <span class="num" id="sec-t">0</span>
+                        <span class="num" id="sec-s">0</span>
+                    </div>
+                    <div class="flags">
+                        <span class="icon"></span>
+                        <span class="num" id="f-h">0</span>
+                        <span class="num" id="f-t">0</span>
+                        <span class="num" id="f-s">0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

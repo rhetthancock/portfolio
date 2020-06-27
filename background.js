@@ -7,6 +7,9 @@ var stars;
 var diagonal;
 
 function init() {
+
+    document.body.classList.add("loaded");
+
     height = window.innerHeight;
     width = window.innerWidth;
 

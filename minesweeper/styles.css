@@ -1,0 +1,266 @@
+* {
+    box-sizing:border-box;
+    user-select:none;
+}
+body {
+    background-color:#000;
+    margin:0;
+    transition:all 2000ms;
+}
+body.gameover {
+    background-color:#c00;
+}
+body.gameover .cell,
+body.victory .cell {
+    background-color:transparent;
+    border-color:#000;
+    color:#000 !important;
+    cursor:default;
+}
+body.gameover .cell.bomb {
+    background-color:#000;
+    color:#c00 !important;
+}
+body.gameover .cell.flagged,
+body.victory .cell.flagged {
+    background-color:transparent;
+    border-color:#ff0;
+    color:#ff0 !important;
+}
+body.gameover .cell.flagged::before,
+body.victory .cell.flagged::before {
+    opacity:0;
+}
+body.gameover .cell.zero,
+body.victory .cell.zero {
+    opacity:0;
+}
+body.victory {
+    background-color:#0c0;
+}
+#settings {
+    padding-top:60px;
+}
+#sidebar {
+    margin-right:50px;
+}
+#wrapper {
+    display:flex;
+    justify-content:center;
+    padding:50px;
+}
+.board {
+    color:#fff;
+    display:flex;
+    flex-wrap:wrap;
+    margin:0 auto;
+}
+.bubble {
+    align-items:center;
+    border:3px solid #fff;
+    border-radius:50%;
+    display:flex;
+    font-family:"Roboto Mono", monospace;
+    height:50px;
+    justify-content:center;
+    margin:5px;
+    text-align:center;
+    transition:all 200ms;
+    width:50px;
+}
+button .bubble {
+    border-color:transparent;
+    color:#666;
+}
+.bubble:first-child {
+    border-color:#fff;
+    color:#fff;
+}
+button.bubble {
+    background-color:transparent;
+    border-color:#ff0;
+    color:#ff0;
+    cursor:pointer;
+    display:flex;
+    font-size:1.5em;
+    outline:none;
+    padding:0;
+    transition:all 200ms;
+}
+button.bubble:hover {
+    border-color:#0ff !important;
+    color:#0ff;
+}
+button.bubbles {
+    border:none;
+    cursor:pointer;
+    outline:none;
+    padding:0;
+}
+button.bubbles.glimmer .bubble {
+    color:#ff0;
+}
+button.bubbles.glimmer .bubble:first-child {
+    border-color:#ff0;
+}
+button.bubbles:hover .bubble {
+    border-color:#222;
+    color:#ff0;
+}
+button.bubbles:hover .bubble:first-child {
+    border-color:#ff0;
+}
+.bubbles {
+    background-color:transparent;
+    color:#fff;
+    display:flex;
+    font-family:"Roboto Mono", monospace;
+    font-size:1.5em;
+    text-transform:uppercase;
+    transition:all 200ms;
+}
+.cell {
+    align-items:center;
+    background-color:#111;
+    border:3px solid rgba(255, 255, 255, 0.1);
+    border-radius:50%;
+    color:transparent;
+    cursor:pointer;
+    display:flex;
+    font-family:"Roboto Mono", monospace;
+    font-size:1.5em;
+    justify-content:center;
+    transition:all 200ms;
+    user-select:none;
+}
+.cell::before {
+    background-color:transparent;
+}
+.cell:hover {
+    background-color:#222;
+}
+.cell.active {
+    background-color:transparent;
+}
+.cell.active:hover {
+    border-color:rgba(255, 255, 255, 0.25);
+}
+.cell.active.bomb {
+    background-color:#c00;
+    color:#fff;
+}
+.cell.active.eight {
+    color:#fff;
+}
+.cell.active.five {
+    color:#f3f;
+}
+.cell.active.four {
+    color:#63f;
+}
+.cell.active.one {
+    color:#06f;
+}
+.cell.active.three {
+    color:#f33;
+}
+.cell.active.seven {
+    color:#f93;
+}
+.cell.active.six {
+    color:#3ff;
+}
+.cell.active.two {
+    color:#0f0;
+}
+.cell.active.zero {
+    border-color:transparent;
+    color:transparent;
+}
+.cell.active.zero:hover {
+    background-color:transparent;
+}
+.cell.flagged {
+    border-color:#ff0;
+    position:relative;
+}
+.cell.flagged:hover {
+    background-color:#111;
+}
+.cell.flagged::before {
+    border-top:15px solid #ff0;
+    border-left:10px solid transparent;
+    border-right:10px solid transparent;
+    content:"";
+    display:block;
+    position: absolute;
+    top:calc(50% - 7.5px);
+}
+.cell.glimmer {
+    border-color:#777;
+}
+.cell.no,
+.cell.active.no {
+    border-color:#f00;
+}
+.flags,
+.timer {
+    color:#fff;
+    display:flex;
+    font-family:"Roboto Mono", monospace;
+    font-size:1.5em;
+}
+.flags {
+    color:#ff0;
+}
+.flags .icon {
+    position:relative;
+}
+.flags .icon::before {
+    border-top:15px solid #ff0;
+    border-left:10px solid transparent;
+    border-right:10px solid transparent;
+    content:"";
+    display:block;
+    position: absolute;
+    top:calc(50% - 7.5px);
+}
+.hud {
+    display:flex;
+    justify-content:space-between;
+    padding-bottom:60px;
+}
+.icon,
+.num {
+    align-items:center;
+    border:3px solid;
+    border-radius:50%;
+    display:flex;
+    height:50px;
+    justify-content:center;
+    margin:5px;
+    text-align:center;
+    width:50px;
+}
+.logo {
+    display:flex;
+    font-family:"Roboto Mono", monospace;
+    font-size:1.5em;
+    padding-bottom:60px;
+    text-transform:uppercase;
+    transition:all 200ms;
+}
+.logo .bubble {
+    border-color:#ff0;
+    color:#ff0;
+}
+.logo .bubble:first-child {
+    border-color:#fff;
+    color:#fff;
+}
+.minus {
+    margin:0 65px;
+}
+.plus {
+    margin-left:65px;
+}

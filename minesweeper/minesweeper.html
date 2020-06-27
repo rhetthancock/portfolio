@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+<head>
+    <script>
+        let BOMB_RATE = 0.25;
+        function main() {
+            let board = new Board(100);
+            document.body.appendChild(board);
+        }
+        function resize() {
+            if(window.innerHeight > window.innerWidth) {
+                
+            }
+            console.log(window.innerHeight);
+            console.log(window.innerWidth);
+        }
+        function Board(size) {
+            let b = document.createElement("board");
+            b.size = size;
+            for(let i = 0; i < b.size; i++) {
+                let c = new Cell(i);
+                b.appendChild(c);
+            }
+            let children = b.children;
+            for(let i = 0; i < children.length; i++) {
+                let current = children[i];
+                let count = 0;
+                
+                console.log(children[i]);
+                //current.innerHTML = "1";
+            }
+            return b;
+        }
+        function Cell(id) {
+            let c = document.createElement("cell");
+            c.id = id;
+            c.addEventListener("click", function() {
+                this.classList.add("active");
+                //alert(c.bomb);
+            });
+            if(Math.random() <= BOMB_RATE) {
+                c.bomb = true;
+                c.classList.add("bomb");
+                c.innerHTML="B";
+            }
+            else {
+                c.bomb = false;
+            }
+            return c;
+        }
+        window.addEventListener("load", main);
+        window.addEventListener("resize", resize);
+    </script>
+    <style>
+        body {
+            background-color:#333;
+            margin:0;
+            overflow:hidden;
+        }
+        board {
+            display:flex;
+            flex-wrap:wrap;
+            margin:0 auto;
+            width:100vh;
+        }
+        cell {
+            align-items:center;
+            background-color:#444;
+            border:1vh solid #555;
+            border-radius:1vw;
+            box-sizing:border-box;
+            color:transparent;
+            cursor:pointer;
+            display:flex;
+            font-size:4vh;
+            font-family:monospace;
+            font-weight:bold;
+            height:9vh;
+            justify-content:center;
+            margin:0.5vh;
+            text-align:center;
+            transition:all 200ms;
+            user-select:none;
+            width:9vh;
+        }
+        cell:hover {
+            background-color:#555;
+        }
+        cell.active {
+            background-color:#111;
+            border-color:#000;
+            color:#fff;
+        }
+        cell.bomb.active {
+            background-color:#f00;
+            border-color:#a00;
+        }
+    </style>
+</head>
+<body>
+</body>
+</html>
