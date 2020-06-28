@@ -1,14 +1,38 @@
 * {
     box-sizing:border-box;
+    transition:all 200ms;
     user-select:none;
+}
+::-webkit-scrollbar {
+    height:20px;
+    width:20px;
+}
+::-webkit-scrollbar-corner {
+    background-color:transparent;
+}
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+    background-color:#111;
+    border:5px solid #000;
+    border-radius: 10px;
+}
+html {
+    height:100%;
 }
 body {
     background-color:#000;
+    height:100%;
     margin:0;
     transition:all 2000ms;
 }
 body.gameover {
     background-color:#c00;
+}
+body.gameover .bubble,
+body.victory .bubble {
+    color:#fff;
 }
 body.gameover .cell,
 body.victory .cell {
@@ -42,11 +66,22 @@ body.victory {
     padding-top:60px;
 }
 #sidebar {
+    flex-shrink:0;
     margin-right:50px;
+}
+#main {
+    overflow:hidden;
+}
+#view {
+    border-radius:25px;
+    max-height:100%;
+    overflow:scroll;
+    padding-bottom:10px;
+    padding-right:10px;
 }
 #wrapper {
     display:flex;
-    justify-content:center;
+    height:100%;
     padding:50px;
 }
 .board {
@@ -104,7 +139,7 @@ button.bubbles.glimmer .bubble:first-child {
     border-color:#ff0;
 }
 button.bubbles:hover .bubble {
-    border-color:#222;
+    border-color:#ff0;
     color:#ff0;
 }
 button.bubbles:hover .bubble:first-child {
@@ -229,6 +264,7 @@ button.bubbles:hover .bubble:first-child {
     display:flex;
     justify-content:space-between;
     padding-bottom:60px;
+    padding-right:30px;
 }
 .icon,
 .num {
@@ -259,8 +295,48 @@ button.bubbles:hover .bubble:first-child {
     color:#fff;
 }
 .minus {
-    margin:0 65px;
-}
-.plus {
     margin-left:65px;
+} 
+
+#hardness .bubble:first-child {
+    border-color:transparent;
+    color:#666;
+}
+
+#hardness:hover .bubble {
+    border-color:transparent;
+    color:#fff;
+}
+
+#hardness.l1 .bubble:first-child {
+    border-color:#080;
+    color:#080;
+}
+#hardness.l2 .bubble:nth-child(2) {
+    border-color:#0f0;
+    color:#0f0;
+}
+#hardness.l3 .bubble:nth-child(3) {
+    border-color:#8f0;
+    color:#8f0;
+}
+#hardness.l4 .bubble:nth-child(4) {
+    border-color:#ff0;
+    color:#ff0;
+}
+#hardness.l5 .bubble:nth-child(5) {
+    border-color:#f80;
+    color:#f80;
+}
+#hardness.l6 .bubble:nth-child(6) {
+    border-color:#f40;
+    color:#f40;
+}
+#hardness.l7 .bubble:nth-child(7) {
+    border-color:#f00;
+    color:#f00;
+}
+#hardness.l8 .bubble:nth-child(8) {
+    border-color:#800;
+    color:#800;
 }

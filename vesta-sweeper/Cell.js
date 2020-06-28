@@ -50,7 +50,7 @@ class Cell {
         this.element.addEventListener("contextmenu", this.handleRightClick);
 
         if(this.isMine) {
-            this.element.innerHTML = "B";
+            this.element.innerHTML = "⚶";
             this.element.classList.add("bomb");
         }
         else {

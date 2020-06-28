@@ -1,8 +1,9 @@
 const DEBUG = true;
 const DEBUG_LEVEL = 1;
-let DENSITY = 0.15;
-let HEIGHT = 15;
-let WIDTH = 15;
+let DENSITY_INT = 12;
+let DENSITY = 0.12;
+let HEIGHT = 13;
+let WIDTH = 13;
 
 let activeBoard = {};
 let firstClick = true;
@@ -61,7 +62,7 @@ function handleMouseUp(event) {
 function init() {
     activeBoard = new Board(WIDTH, HEIGHT, DENSITY);
     let html = activeBoard.generateHTML();
-    document.getElementById("main").appendChild(html);
+    document.getElementById("view").appendChild(html);
     if(DEBUG) {
         console.log(activeBoard);
     }
@@ -70,13 +71,36 @@ function init() {
         newGame();
     });
 
+    document.getElementById("b-plus").addEventListener("click", function() {
+        if(DENSITY_INT < 50) {
+            DENSITY_INT++;
+            let bTens = document.getElementById("b-tens");
+            let bSingles = document.getElementById("b-singles");
+            bTens.innerHTML = Math.floor(DENSITY_INT / 10);
+            bSingles.innerHTML = DENSITY_INT % 10;
+            DENSITY = DENSITY_INT / 100;
+            newGame();
+        }
+    });
+    document.getElementById("b-minus").addEventListener("click", function() {
+        if(DENSITY_INT > 1) {
+            DENSITY_INT--;
+            let bTens = document.getElementById("b-tens");
+            let bSingles = document.getElementById("b-singles");
+            bTens.innerHTML = Math.floor(DENSITY_INT / 10);
+            bSingles.innerHTML = DENSITY_INT % 10;
+            DENSITY = DENSITY_INT / 100;
+            newGame();
+        }
+    });
     document.getElementById("x-plus").addEventListener("click", function() {
-        if(WIDTH < 99) {
+        if(WIDTH < 50) {
             WIDTH++;
             let xTens = document.getElementById("x-tens");
             let xSingles = document.getElementById("x-singles");
             xTens.innerHTML = Math.floor(WIDTH / 10);
             xSingles.innerHTML = WIDTH % 10;
+            newGame();
         }
     });
     document.getElementById("x-minus").addEventListener("click", function() {
@@ -86,15 +110,17 @@ function init() {
             let xSingles = document.getElementById("x-singles");
             xTens.innerHTML = Math.floor(WIDTH / 10);
             xSingles.innerHTML = WIDTH % 10;
+            newGame();
         }
     });
     document.getElementById("y-plus").addEventListener("click", function() {
-        if(HEIGHT < 99) {
+        if(HEIGHT < 50) {
             HEIGHT++;
             let yTens = document.getElementById("y-tens");
             let ySingles = document.getElementById("y-singles");
             yTens.innerHTML = Math.floor(HEIGHT / 10);
             ySingles.innerHTML = HEIGHT % 10;
+            newGame();
         }
     });
     document.getElementById("y-minus").addEventListener("click", function() {
@@ -104,14 +130,115 @@ function init() {
             let ySingles = document.getElementById("y-singles");
             yTens.innerHTML = Math.floor(HEIGHT / 10);
             ySingles.innerHTML = HEIGHT % 10;
+            newGame();
         }
     });
+
+    document.getElementById("hardness").addEventListener("click", function(event) {
+        let target = event.target;
+        if(target.classList.contains("bubble")) {
+            target = target.parentNode;
+        }
+        if(target.classList.contains("l1")) {
+            target.classList.remove("l1");
+            target.classList.add("l2");
+            WIDTH = 8;
+            HEIGHT = 8;
+            DENSITY_INT = 10;
+        }
+        else if(target.classList.contains("l2")) {
+            target.classList.remove("l2");
+            target.classList.add("l3");
+            WIDTH = 13;
+            HEIGHT = 13;
+            DENSITY_INT = 12;
+        }
+        else if(target.classList.contains("l3")) {
+            target.classList.remove("l3");
+            target.classList.add("l4");
+            WIDTH = 21;
+            HEIGHT = 13;
+            DENSITY_INT = 15;
+        }
+        else if(target.classList.contains("l4")) {
+            target.classList.remove("l4");
+            target.classList.add("l5");
+            WIDTH = 32;
+            HEIGHT = 17;
+            DENSITY_INT = 19;
+        }
+        else if(target.classList.contains("l5")) {
+            target.classList.remove("l5");
+            target.classList.add("l6");
+            WIDTH = 32;
+            HEIGHT = 24;
+            DENSITY_INT = 24;
+        }
+        else if(target.classList.contains("l6")) {
+            target.classList.remove("l6");
+            target.classList.add("l7");
+            WIDTH = 44;
+            HEIGHT = 32;
+            DENSITY_INT = 30;
+        }
+        else if(target.classList.contains("l7")) {
+            target.classList.remove("l7");
+            target.classList.add("l8");
+            WIDTH = 50;
+            HEIGHT = 50;
+            DENSITY_INT = 37;
+        }
+        else if(target.classList.contains("l8")) {
+            target.classList.remove("l8");
+            target.classList.add("l1");
+            WIDTH = 8;
+            HEIGHT = 5;
+            DENSITY_INT = 8;
+        }
+        DENSITY = DENSITY_INT / 100;
+        document.getElementById("x-tens").innerHTML = Math.floor(WIDTH / 10);
+        document.getElementById("x-singles").innerHTML = WIDTH % 10;
+        document.getElementById("y-tens").innerHTML = Math.floor(HEIGHT / 10);
+        document.getElementById("y-singles").innerHTML = HEIGHT % 10;
+        document.getElementById("b-tens").innerHTML = Math.floor(DENSITY_INT / 10);
+        document.getElementById("b-singles").innerHTML = DENSITY_INT % 10;
+        newGame();
+    });
+
+    window.addEventListener("resize", fixView);
+
+    fixView();
+    // document.getElementById("view").addEventListener("scroll", function(event) {
+    //     let view = event.target;
+    //     if(view.scrollLeft > 0 && view.scrollTop > 0) {
+    //         view.classList.add("offtopleft");
+    //         return;
+    //     }
+    //     else {
+    //         view.classList.remove("offtopleft");
+    //     }
+    //     if(view.scrollLeft > 0) {
+    //         view.classList.add("offleft");
+    //     }
+    //     else {
+    //         view.classList.remove("offleft");
+    //     }
+    //     if(view.scrollTop > 0) {
+    //         view.classList.add("offtop");
+    //     }
+    //     else {
+    //         view.classList.remove("offtop");
+    //     }
+    //     console.log(view.scrollLeft);
+    //     console.log(view.scrollWidth);
+    //     console.log(view.scrollTop);
+    // });
 }
 function newGame() {
     ids = 0;
-    document.getElementById("main").removeChild(activeBoard.element);
+    document.getElementById("view").removeChild(activeBoard.element);
     activeBoard = new Board(WIDTH, HEIGHT, DENSITY);
-    document.getElementById("main").appendChild(activeBoard.generateHTML());
+    document.getElementById("view").appendChild(activeBoard.generateHTML());
     if(document.body.classList.contains("gameover")) {
         document.body.classList.remove("gameover");
     }
@@ -123,7 +250,7 @@ function newGame() {
     last = new Date();
 }
 function replacementGame(x, y) {
-    document.getElementById("main").removeChild(activeBoard.element);
+    document.getElementById("view").removeChild(activeBoard.element);
     let targetCell;
     do {
         ids = 0;
@@ -132,11 +259,18 @@ function replacementGame(x, y) {
         console.log(targetCell);
     }
     while(targetCell.count != 0 && !targetCell.isMine);
-    document.getElementById("main").appendChild(activeBoard.generateHTML());
+    document.getElementById("view").appendChild(activeBoard.generateHTML());
     targetCell.show();
     console.log(activeBoard);
 }
 
+function fixView() {
+    let main = document.getElementById("main");
+    let hud = main.getElementsByClassName("hud")[0];
+    let view = document.getElementById("view");
+    let maxHeight = main.offsetHeight - hud.offsetHeight;
+    view.style.maxHeight = maxHeight + "px";
+}
 
 function updateTimer() {
     let elapsed = new Date() - last;
@@ -163,12 +297,12 @@ function updateTimer() {
 }
 
 function updateBombCount() {
-    if(paused) {
-        document.getElementById("f-h").innerHTML = 0;
-        document.getElementById("f-t").innerHTML = 0;
-        document.getElementById("f-s").innerHTML = 0;
-    }
-    else {
+    // if(paused) {
+    //     document.getElementById("f-h").innerHTML = 0;
+    //     document.getElementById("f-t").innerHTML = 0;
+    //     document.getElementById("f-s").innerHTML = 0;
+    // }
+    // else {
         let count = activeBoard.bombCount - activeBoard.flagged;
         if(count < 0) {
             let dif = Math.abs(count);
@@ -186,7 +320,7 @@ function updateBombCount() {
             document.getElementById("f-t").innerHTML = flagT;
             document.getElementById("f-s").innerHTML = flagS;
         }
-    }
+    //}
 }
 
 window.addEventListener("load", init);
