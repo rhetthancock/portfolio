@@ -89,12 +89,14 @@ class Board {
                 }
             }
         }
+        if(board.bombCount == 0) {
+            return this.generateBoard(width, height);
+        }
         return board;
     }
     generateHTML() {
         let cellMargin = 5;
         let cellSize = 50;
-
         this.element = document.createElement("div");
         this.element.classList.add("board");
         this.element.style.width = (cellSize * this.width) + (cellMargin * 2 * this.width) + "px";

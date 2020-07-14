@@ -11,25 +11,66 @@ class Cell {
         this.element.classList.add("flagged");
     }
     handleClick(event) {
-        if(!event.target.classList.contains("active") && !event.target.classList.contains("flagged")) {
-            let targetId = parseInt(event.target.id.substring(1));
-            console.log(targetId);
-            let cell = activeBoard.getCell(targetId);
-            cell.show();
+        let targetId = parseInt(event.target.id.substring(1));
+        let cell = activeBoard.getCell(targetId);
+        if(window.mobileCheck()) {
+            cell.reveal();
+        }
+        else {
+            if(!event.target.classList.contains("active") && !event.target.classList.contains("flagged")) {
+                cell.show();
+            }
         }
     }
     handleRightClick(event) {
         event.preventDefault();
-        if(!event.target.classList.contains("active")) {
-            let targetId = parseInt(event.target.id.substring(1));
-            let cell = activeBoard.getCell(targetId);
-            if(event.target.classList.contains("flagged")) {
-                cell.unflag();
-            }
-            else {
-                cell.flag();
+        if(!window.mobileCheck()) {
+            if(!event.target.classList.contains("active")) {
+                let targetId = parseInt(event.target.id.substring(1));
+                let cell = activeBoard.getCell(targetId);
+                if(event.target.classList.contains("flagged")) {
+                    cell.unflag();
+                }
+                else {
+                    cell.flag();
+                }
             }
         }
+    }
+    handleTouchEnd(event) {
+        this.touchActive = false;
+        this.touchEndTime = new Date();
+        this.touchEndTarget = event.target;
+        let touchLength = this.touchEndTime - this.touchStartTime;
+        if(this.touchStartTarget == this.touchEndTarget) {
+            let targetId = parseInt(event.target.id.substring(1));
+            let cell = activeBoard.getCell(targetId);
+            if(!event.target.classList.contains("active")) {
+                if(touchLength > 350) {
+                    if(event.target.classList.contains("flagged")) {
+                        cell.unflag();
+                    }
+                    else {
+                        cell.flag();
+                    }
+                }
+                else {
+                    if(!event.target.classList.contains("flagged")) {
+                        cell.show();
+                    }
+                }
+            }
+            else {
+                cell.reveal();
+            }
+        }
+        this.touchEndTarget.classList.remove("touch");
+    }
+    handleTouchStart(event) {
+        this.touchActive = true;
+        this.touchStartTime = new Date();
+        this.touchStartTarget = event.target;
+        this.touchStartTarget.classList.add("touch");
     }
     glimmer() {
         this.element.classList.add("glimmer");
@@ -46,11 +87,13 @@ class Cell {
         this.element.style.height = cellSize + "px";
         this.element.style.margin = cellMargin + "px";
         this.element.style.width = cellSize + "px";
-        this.element.addEventListener("click", this.handleClick);
-        this.element.addEventListener("contextmenu", this.handleRightClick);
+        this.element.addEventListener("click", this.handleClick, false);
+        this.element.addEventListener("contextmenu", this.handleRightClick, false);
+        this.element.addEventListener("touchstart", this.handleTouchStart, false);
+        this.element.addEventListener("touchend", this.handleTouchEnd, false);
 
         if(this.isMine) {
-            this.element.innerHTML = "⚶";
+            this.element.innerHTML = "M";
             this.element.classList.add("bomb");
         }
         else {

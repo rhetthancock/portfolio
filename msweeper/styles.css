@@ -2,6 +2,11 @@
     box-sizing:border-box;
     transition:all 200ms;
     user-select:none;
+    -ms-user-select:none;
+    -moz-user-select:none;
+    -khtml-user-select:none;
+    -webkit-user-select:none;
+    -webkit-touch-callout:none;
 }
 ::-webkit-scrollbar {
     height:20px;
@@ -14,7 +19,7 @@
     border-radius: 10px;
 }
 ::-webkit-scrollbar-thumb {
-    background-color:#111;
+    background-color:#666;
     border:5px solid #000;
     border-radius: 10px;
 }
@@ -31,24 +36,26 @@ body.gameover {
     background-color:#c00;
 }
 body.gameover .bubble,
-body.victory .bubble {
+body.victory .bubble,
+body.gameover #hardness .bubble,
+body.victory #hardness .bubble {
     color:#fff;
 }
 body.gameover .cell,
 body.victory .cell {
-    background-color:transparent;
-    border-color:#000;
+    background-color:transparent !important;
+    border-color:#000 !important;
     color:#000 !important;
     cursor:default;
 }
 body.gameover .cell.bomb {
-    background-color:#000;
+    background-color:#000 !important;
     color:#c00 !important;
 }
 body.gameover .cell.flagged,
 body.victory .cell.flagged {
     background-color:transparent;
-    border-color:#ff0;
+    border-color:#ff0 !important;
     color:#ff0 !important;
 }
 body.gameover .cell.flagged::before,
@@ -83,6 +90,18 @@ body.victory {
     display:flex;
     height:100%;
     padding:50px;
+}
+#wrapper.mobile {
+    padding:10px;
+}
+#wrapper.mobile #main {
+    margin:0 auto;
+}
+#wrapper.mobile #sidebar {
+    display:none;
+}
+#wrapper.mobile #sidebar.active {
+    display:block;
 }
 .board {
     color:#fff;
@@ -156,8 +175,8 @@ button.bubbles:hover .bubble:first-child {
 }
 .cell {
     align-items:center;
-    background-color:#111;
-    border:3px solid rgba(255, 255, 255, 0.1);
+    background-color:#666;
+    border:3px solid #999;
     border-radius:50%;
     color:transparent;
     cursor:pointer;
@@ -165,20 +184,22 @@ button.bubbles:hover .bubble:first-child {
     font-family:"Roboto Mono", monospace;
     font-size:1.5em;
     justify-content:center;
+    position:relative;
     transition:all 200ms;
-    user-select:none;
 }
 .cell::before {
     background-color:transparent;
 }
 .cell:hover {
-    background-color:#222;
+    background-color:#999;
+    border-color:#fff;
 }
 .cell.active {
-    background-color:transparent;
+    background-color:transparent !important;
+    border-color:#333;
 }
 .cell.active:hover {
-    border-color:rgba(255, 255, 255, 0.25);
+    border-color:#666;
 }
 .cell.active.bomb {
     background-color:#c00;
@@ -216,6 +237,7 @@ button.bubbles:hover .bubble:first-child {
     background-color:transparent;
 }
 .cell.flagged {
+    background-color:#333 !important;
     border-color:#ff0;
     position:relative;
 }
@@ -232,7 +254,8 @@ button.bubbles:hover .bubble:first-child {
     top:calc(50% - 7.5px);
 }
 .cell.glimmer {
-    border-color:#777;
+    background-color:#999;
+    border-color:#fff;
 }
 .cell.no,
 .cell.active.no {
@@ -266,6 +289,17 @@ button.bubbles:hover .bubble:first-child {
     padding-bottom:60px;
     padding-right:30px;
 }
+.hud .bubbles {
+    display:none;
+}
+.mobile .hud .bubbles {
+    display:flex;
+}
+.mobile .hud .row:nth-child(2) {
+    align-items:flex-end;
+    display:flex;
+    flex-direction:column;
+}
 .icon,
 .num {
     align-items:center;
@@ -296,18 +330,16 @@ button.bubbles:hover .bubble:first-child {
 }
 .minus {
     margin-left:65px;
-} 
+}
 
 #hardness .bubble:first-child {
     border-color:transparent;
     color:#666;
 }
-
 #hardness:hover .bubble {
     border-color:transparent;
     color:#fff;
 }
-
 #hardness.l1 .bubble:first-child {
     border-color:#080;
     color:#080;
@@ -339,4 +371,42 @@ button.bubbles:hover .bubble:first-child {
 #hardness.l8 .bubble:nth-child(8) {
     border-color:#800;
     color:#800;
+}
+
+
+
+.rightclick {
+    background-color:purple;
+}
+.leftclick {
+    background-color:green;
+}
+
+.cell::after {
+    border-radius:50%;
+    content:"";
+    display:block;
+    height:10%;
+    left:45%;
+    position:absolute;
+    top:45%;
+    transition:all 500ms;
+    width:10%;
+}
+.cell.touch::after {
+    background-color:#ff0;
+    height:100%;
+    left:0;
+    top:0;
+    width:100%;
+}
+.cell.touch {
+    border-color:#ff0;
+}
+.cell.zero.touch {
+    background:none;
+}
+.cell.active::after,
+.cell.zero::after {
+    display:none;
 }
