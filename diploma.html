@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Diploma Test</title>
+        <style>
+            @font-face {
+                font-family:OldeEnglish;
+                src:url(fonts/OldeEnglish.ttf);
+            }
+            #nelson {
+                top:-17vw;
+            }
+            #tromp {
+                top:-15.5vw;
+            }
+            body {
+                background-color:#f5f2e6;
+                font-family:"OldeEnglish";
+                margin:0;
+                padding:4vw;
+            }
+            h1 {
+                font-size:10vw;
+                font-weight:normal;
+                justify-content:center;
+                text-align:center;
+                text-shadow:0.25vw 0.25vw 0.15vw rgba(0, 0, 0, 0.25);
+            }
+            h2 {
+                font-size:5vw;
+                font-weight:normal;
+                margin:0.5em 0;
+                text-align:center;
+            }
+            p {
+                font-size:3vw;
+                margin:0.5em 0;
+                text-align:center;
+            }
+            .footer {
+                align-items:center;
+                display:flex;
+                margin-top:5vw;
+            }
+            .guild {
+                color:blue;
+                text-shadow:1px 1px 0 orange, 1px -1px 0 orange, -1px -1px 0 orange, -1px 1px 0 orange, 0.35vw 0.35vw 0.15vw rgba(0, 0, 0, 0.25);
+            }
+            .line {
+                background-color:#000;
+                height:1px;
+                width:100%;
+            }
+            .seal {
+                background-color:orange;
+                border:2vw solid blue;
+                border-radius:50%;
+                height:10vw;
+                margin:0 auto;
+                width:10vw;
+            }
+            .signature {
+                font-family:Arial, Helvetica, sans-serif;
+                font-size:1vw;
+                position:relative;
+                text-align:center;
+                text-transform:uppercase;
+                width:30vw;
+            }
+            .signature img {
+                display:block;
+                position:absolute;
+                width:100%;
+            }
+            .signature span {
+                display:block;
+                margin:0.5em 0;
+            }
+            .sm {
+                font-size:2.4vw;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>
+            <span class="guild">B</span>oise <span class="guild">S</span>tate <span class="guild">U</span>niversity
+        </h1>
+        <p>The Board of Trustees by virtue of the Authority vested in it by law and upon recommendation of the University Faculty does hereby confer upon</p>
+        <h2>Rhett Tyrell Hancock</h2>
+        <p>the degree of</p>
+        <h2>Bachelor of Science</h2>
+        <p>With all of the rights and responsibilities pertaining thereto.</p>
+        <p class="sm">Given at Boise, Idaho, this ninth day of May, two thousand and twenty.</p>
+        <div class="footer">
+            <div class="signature">
+                <img alt="Marlene Tromp Signature" id="tromp" src="images/signature-tromp.svg">
+                <div class="line"></div>
+                <span class="name">Marlene Tromp</span>
+                <span class="title">President of The University</span>
+            </div>
+            <div class="seal"></div>
+            <div class="signature">
+                <img alt="Mandy Nelson Signature" id="nelson" src="images/signature-nelson.svg">
+                <div class="line"></div>
+                <span class="name">Mandy Nelson</span>
+                <span class="title">Interim Registrar</span>
+            </div>
+        </div>
+    </body>
+</html>

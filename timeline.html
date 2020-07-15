@@ -15,7 +15,12 @@
             }
             h3 {
                 font-size:2em;
+                font-weight:normal;
                 margin:0;
+            }
+            h4 {
+                font-size:1.25em;
+                margin:1em 0;
             }
             section {
                 display:flex;
@@ -48,8 +53,14 @@
             #bbcom h3 {
                 color:#00aeef;
             }
+            #education h2 {
+                text-align:right;
+            }
             #education section {
                 text-align:right;
+            }
+            #education .date {
+                justify-content:flex-end;
             }
             #mtchs {
                 border-right:0.5em solid #b52022;
@@ -73,7 +84,7 @@
                 text-align:center;
             }
             #socialeyes {
-
+                border-left:0.5em solid #5cb1e2;
             }
             #socialeyes h3 {
                 color:#5cb1e2;
@@ -83,12 +94,29 @@
                 display:flex;
                 justify-content:center;
             }
+            .date {
+                align-items:center;
+                display:flex;
+                font-size:3em;
+                font-weight:bold;
+                opacity:0.25;
+            }
+            .date span {
+                line-height:1em;
+            }
             .season {
                 background-color:#666;
                 border-radius:50%;
                 height:0.25em;
                 margin:2em auto;
                 width:0.25em;
+            }
+            .vert {
+                font-size:0.4em;
+                font-weight:normal;
+                line-height:1em;
+                text-transform:uppercase;
+                transform:rotate(270deg);
             }
             .year {
                 align-items:center;
@@ -109,12 +137,19 @@
             <div id="education">
                 <h2>Education</h2>
                 <section id="bsu">
+                    <h4 class="date">
+                        <span class="vert">Aug</span>
+                        <span>2013 - </span>
+                        <span class="vert">May</span>
+                        <span>2020</span>
+                    </h4>
                     <h3>Boise State University</h3>
                     <h4>Bachelor of Computer Science</h4>
                     <ul>
                         <li>Algorithms</li>
                         <li>Bash</li>
                         <li>C</li>
+                        <li>C#</li>
                         <li>Computer Graphics</li>
                         <li>Cybersecurity</li>
                         <li>Databases</li>
@@ -126,6 +161,12 @@
                     </ul>
                 </section>
                 <section id="mtchs">
+                    <h4 class="date">
+                        <span class="vert">Aug</span>
+                        <span>2009 - </span>
+                        <span class="vert">May</span>
+                        <span>2013</span>
+                    </h4>
                     <h3>Meridian Technical Charter High School</h3>
                     <h4>Programming &amp; Media Arts Pathways</h4>
                     <ul>
@@ -193,6 +234,10 @@
             <div id="employment">
                 <h2>Employment</h2>
                 <section id="bbcom">
+                    <h4 class="date">
+                        <span class="vert">Feb</span>
+                        <span>2016 - Present</span>
+                    </h4>
                     <h3>Bodybuilding.com</h3>
                     <h4>Front-End Engineer</h4>
                     <ul>
@@ -213,6 +258,12 @@
                     </ul>
                 </section>
                 <section id="oit">
+                    <h4 class="date">
+                        <span class="vert">Jun</span>
+                        <span>2014 - </span>
+                        <span class="vert">Feb</span>
+                        <span>2016</span>
+                    </h4>
                     <h3>Boise State University</h3>
                     <h4>WordPress Support Analyst</h4>
                     <ul>
@@ -221,6 +272,12 @@
                     </ul>
                 </section>
                 <section id="socialeyes">
+                    <h4 class="date">
+                        <span class="vert">Jun</span>
+                        <span>2011 - </span>
+                        <span class="vert">Jun</span>
+                        <span>2014</span>
+                    </h4>
                     <h3>SocialEyes Marketing</h3>
                 </section>
             </div>
