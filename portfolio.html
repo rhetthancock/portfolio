@@ -29,16 +29,42 @@
                 gap:2em;
                 grid-template-columns:repeat(2, 1fr);
             }
+            .button {
+                border:3px solid #fff;
+                border-radius:8px;
+                color:#fff;
+                display:block;
+                font-size:1.5em;
+                font-weight:bold;
+                margin-top:1em;
+                max-width:250px;
+                padding:0.5em 1em;
+                transition:all 200ms;
+                text-align:center;
+                text-decoration:none;
+            }
+            .button:hover {
+                border-color:#ff0;
+                background-color:#ff0;
+                color:#000;
+                text-shadow:none;
+            }
             .card {
                 border-radius:8px;
                 box-shadow:0 0 15px #111;
                 overflow:hidden;
                 position:relative;
             }
+            .desc {
+                padding-right:2em;
+            }
             .overlay {
                 background:linear-gradient(transparent, rgba(0, 0, 0, 0.85));
                 bottom:0;
                 color:#fff;
+                display:flex;
+                flex-wrap:wrap;
+                justify-content:space-between;
                 left:0;
                 padding:2em;
                 position:absolute;
@@ -50,27 +76,36 @@
     </head>
     <body>
         <div id="grid">
-            <a class="card" href="#">
+            <div class="card">
                 <img alt="" class="" src="images/msweeper.PNG">
                 <div class="overlay">
-                    <h3>MSweeper</h3>
-                    <p>Node WebApp clone of the popular Minesweeper game</p>
+                    <div class="desc">
+                        <h3>MSweeper</h3>
+                        <p>Node WebApp clone of the popular Minesweeper game</p>
+                    </div>
+                    <a class="button" href="#">View Project</a>
                 </div>
-            </a>
-            <a class="card" href="#">
+            </div>
+            <div class="card">
                 <img alt="" class="" src="images/astro-trivia.png">
                 <div class="overlay">
-                    <h3>astro-trivia.com</h3>
-                    <p>Trivia game website that generates random astronomy questions</p>
+                    <div class="desc">
+                        <h3>astro-trivia.com</h3>
+                        <p>Trivia game website that generates random astronomy questions</p>
+                    </div>
+                    <a class="button" href="#">View Project</a>
                 </div>
-            </a>
-            <a class="card" href="#">
+            </div>
+            <div class="card">
                 <img alt="" class="" src="images/terrain.png">
                 <div class="overlay">
-                    <h3>Terrain Generator</h3>
-                    <p>3D WebGL terrain generator user controls and realistic lighting</p>
+                    <div class="desc">
+                        <h3>Terrain Generator</h3>
+                        <p>3D WebGL terrain generator user controls and realistic lighting</p>
+                    </div>
+                    <a class="button" href="#">View Project</a>
                 </div>
-            </a>
+            </div>
         </div>
     </body>
 </html>
