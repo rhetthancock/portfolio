@@ -28,32 +28,21 @@
                 display:grid;
                 gap:2em;
                 grid-template-columns:repeat(2, 1fr);
-            }
-            .button {
-                border:3px solid #fff;
-                border-radius:8px;
-                color:#fff;
-                display:block;
-                font-size:1.5em;
-                font-weight:bold;
-                margin-top:1em;
-                max-width:250px;
-                padding:0.5em 1em;
-                transition:all 200ms;
-                text-align:center;
-                text-decoration:none;
-            }
-            .button:hover {
-                border-color:#ff0;
-                background-color:#ff0;
-                color:#000;
-                text-shadow:none;
+                padding:2em;
             }
             .card {
+                border:1px solid #888;
                 border-radius:8px;
                 box-shadow:0 0 15px #111;
                 overflow:hidden;
                 position:relative;
+                transition:all 250ms;
+            }
+            .card:hover {
+                border:1px solid #ff0;
+            }
+            .card:hover .overlay {
+                color:#ff0;
             }
             .desc {
                 padding-right:2em;
@@ -62,9 +51,6 @@
                 background:linear-gradient(transparent, rgba(0, 0, 0, 0.85));
                 bottom:0;
                 color:#fff;
-                display:flex;
-                flex-wrap:wrap;
-                justify-content:space-between;
                 left:0;
                 padding:2em;
                 position:absolute;
@@ -76,36 +62,27 @@
     </head>
     <body>
         <div id="grid">
-            <div class="card">
+            <a class="card" href="#">
                 <img alt="" class="" src="images/msweeper.PNG">
                 <div class="overlay">
-                    <div class="desc">
-                        <h3>MSweeper</h3>
-                        <p>Node WebApp clone of the popular Minesweeper game</p>
-                    </div>
-                    <a class="button" href="#">View Project</a>
+                    <h3>MSweeper</h3>
+                    <p>Node WebApp clone of the popular Minesweeper game</p>
                 </div>
-            </div>
-            <div class="card">
+            </a>
+            <a class="card" href="#">
                 <img alt="" class="" src="images/astro-trivia.png">
                 <div class="overlay">
-                    <div class="desc">
-                        <h3>astro-trivia.com</h3>
-                        <p>Trivia game website that generates random astronomy questions</p>
-                    </div>
-                    <a class="button" href="#">View Project</a>
+                    <h3>astro-trivia.com</h3>
+                    <p>Trivia game website that generates random astronomy questions</p>
                 </div>
-            </div>
-            <div class="card">
+            </a>
+            <a class="card" href="#">
                 <img alt="" class="" src="images/terrain.png">
                 <div class="overlay">
-                    <div class="desc">
-                        <h3>Terrain Generator</h3>
-                        <p>3D WebGL terrain generator user controls and realistic lighting</p>
-                    </div>
-                    <a class="button" href="#">View Project</a>
+                    <h3>Terrain Generator</h3>
+                    <p>3D WebGL terrain generator user controls and realistic lighting</p>
                 </div>
-            </div>
+            </a>
         </div>
     </body>
 </html>
