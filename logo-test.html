@@ -7,99 +7,140 @@
             background-color:#111;
         }
         #logo {
+            align-items:center;
             display:flex;
+            justify-content:center;
             padding:100px;
         }
-        #seg1 {
-            background-color:#c00;
-            height:400px;
-            width: 100px;
-        }
-        #seg2 {
-            background-color:#c80;
-            height:200px;
-            width:100px;
-        }
-        #seg2::after {
-            border-bottom:100px solid transparent;
-            border-left:100px solid #c80;
-            border-top:100px solid transparent;
-            content:"";
-            display:block;
-            position: absolute;
-            right:-100px;
-        }
-        #seg3 {
-            background-color:#cc0;
-            height:200px;
-            width:100px;
-        }
-        #seg3::after {
-            border-left:100px solid #cc0;
-            border-top:200px solid transparent;
-            content:"";
-            display:block;
-            position:absolute;
-            right:-100px;
-        }
-        #seg4 {
-            background-color:#0c0;
-            height:400px;
-            margin-left:100px;
-            width:100px;
-        }
-        #seg4::after {
-            border-bottom:100px solid transparent;
-            border-right:100px solid #0c0;
-            content:"";
-            display:block;
-            left:-100px;
-            position:absolute;
-        }
-        #seg4::before {
-            border-bottom:200px solid transparent;
-            border-right:100px solid #0c0;
-            border-top:100px solid transparent;
-            bottom:0;
-            content:"";
-            display:block;
-            left:-100px;
-            position:absolute;
-        }
-        #seg5 {
-            background-color:#08c;
-            height:200px;
-            width:200px;
-        }
-        #seg6 {
-            background-color:#00c;
-            height:200px;
-            width:200px;
-        }
-        #seg7 {
-            background-color:#80c;
-            width:100px;
-            height:400px;
-        }
-        .seg {
-            position:relative;
+        #logo * {
             transition:all 200ms;
+        }
+        #s1 {
+            background-color:#333;
+        }
+        #s2 {
+            display:flex;
+        }
+        #s2 .rect {
+            background-color:#333;
+            height:200px;
+        }
+        #s2 .tri {
+            border-bottom:100px solid transparent;
+            border-left:100px solid #333;
+            border-top:100px solid transparent;
+        }
+        #s3 {
+            display:flex;
+        }
+        #s3 .rect {
+            background-color:#333;
+            height:200px;
+        }
+        #s3 .tri {
+            border-left:100px solid #333;
+            border-top:200px solid transparent;
+        }
+        #s4 {
+            display:flex;
+            margin-left:-101px;
+        }
+        #s4 #t1 {
+            border-bottom:100px solid transparent;
+            border-right:100px solid #333;
+        }
+        #s4 #t2 {
+            border-bottom:200px solid transparent;
+            border-right:100px solid #333;
+            border-top:100px solid transparent;
+        }
+        #s4 .rect {
+            background-color:#333;
+        }
+        #s5 {
+            background-color:#333;
+        }
+        #s6 {
+            background-color:#333;
+        }
+        #s7 {
+            background-color:#333;
+        }
+        .rect {
+            height:400px;
+            width:100px;
+        }
+        .square {
+            height:200px;
+            width:200px;
+        }
+        #logo:hover .seg {
+            margin:40px 20px;
+        }
+        #logo:hover #s4 {
+            margin-left:-60px;
+            margin-top:15px;
+        }
+        #logo:hover #s1 {
+            background-color:#c00;
+        }
+        #logo:hover #s2 .rect {
+            background-color:#c80;
+        }
+        #logo:hover #s2 .tri {
+            border-left:100px solid #c80;
+        }
+        #logo:hover #s3 .rect {
+            background-color:#cc0;
+        }
+        #logo:hover #s3 .tri {
+            border-left:100px solid #cc0;
+        }
+        #logo:hover #s4 #t1 {
+            border-right:100px solid #0c0;
+        }
+        #logo:hover #s4 #t2 {
+            border-right:100px solid #0c0;
+        }
+        #logo:hover #s4 .rect {
+            background-color:#0c0;
+        }
+        #logo:hover #s5 {
+            background-color:#08c;
+        }
+        #logo:hover #s6 {
+            background-color:#00c;
+        }
+        #logo:hover #s7 {
+            background-color:#80c;
         }
     </style>
 </head>
 <body>
     <div id="logo">
-        <div class="seg" id="seg1"></div>
+        <div class="rect seg" id="s1"></div>
         <div class="stack">
-            <div class="seg" id="seg2"></div>
-            <div class="seg" id="seg3"></div>
+            <div class="seg" id="s2">
+                <div class="rect"></div>
+                <div class="tri"></div>
+            </div>
+            <div class="seg" id="s3">
+                <div class="rect"></div>
+                <div class="tri"></div>
+            </div>
         </div>
-        <div class="seg" id="seg4"></div>
+        <div class="seg" id="s4">
+            <div class="stack">
+                <div class="tri" id="t1"></div>
+                <div class="tri" id="t2"></div>
+            </div>
+            <div class="rect"></div>
+        </div>
         <div class="stack">
-            <div class="seg" id="seg5"></div>
-            <div class="seg" id="seg6"></div>
+            <div class="seg square" id="s5"></div>
+            <div class="seg square" id="s6"></div>
         </div>
-        <div class="seg" id="seg7"></div>
+        <div class="rect seg" id="s7"></div>
     </div>
 </body>
 </html>
