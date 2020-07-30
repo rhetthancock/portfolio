@@ -8,9 +8,44 @@
                 box-sizing:border-box;
             }
             body {
-                background-color:#333;
+                background-color:#111118;
                 color:#fff;
                 font-family:"Titillium Web", Arial, Helvetica, sans-serif;
+                margin:0;
+            }
+            button,
+            .button {
+                background:transparent;
+                border:2px solid #fff;
+                border-radius:10px;
+                color:#fff;
+                cursor:pointer;
+                font-family:"Titillium Web", Arial, Helvetica, sans-serif;
+                font-size:18px;
+                font-weight:bold;
+                margin:10px 10px 0;
+                padding:5px 20px;
+                text-decoration:none;
+                text-shadow:0 0 10px #000;
+                transition:all 250ms;
+            }
+            button:first-child,
+            .button:first-child {
+                margin-left:0;
+            }
+            button:hover,
+            .button:hover {
+                background-color:#ff0;
+                border-color:#ff0;
+                color:#000;
+                text-shadow:none;
+            }
+            h2 {
+                font-size:4em;
+                line-height:1em;
+                margin:30px;
+                opacity:0.25;
+                text-align:center;
             }
             h3 {
                 font-size:2em;
@@ -26,63 +61,79 @@
             }
             #grid {
                 display:grid;
-                gap:1em;
+                gap:30px;
                 grid-template-columns:repeat(auto-fill, minmax(500px, 1fr));
-                padding:1em;
+                padding:30px;
             }
             .card {
-                border:1px solid #888;
-                border-radius:8px;
-                box-shadow:0 0 15px #111;
+                border:1px solid rgba(255, 255, 255, 0.1);
+                border-radius:10px;
+                box-shadow:0 0 1.5em #000;
                 overflow:hidden;
                 position:relative;
                 transition:all 250ms;
-            }
-            .card:hover {
-                border:1px solid #ff0;
-            }
-            .card:hover .overlay {
-                color:#ff0;
             }
             .desc {
                 padding-right:2em;
             }
             .overlay {
-                background:linear-gradient(transparent, rgba(0, 0, 0, 0.85));
+                background:linear-gradient(transparent, rgba(0, 0, 0, 1));
                 bottom:0;
                 color:#fff;
                 left:0;
-                padding:2em;
+                padding:60px 30px 30px;
                 position:absolute;
                 text-shadow:0 0 10px #000;
                 transition:all 250ms;
                 width:100%;
             }
+            @media screen and (max-width:600px) {
+                #grid {
+                    display:block;
+                }
+                .card {
+                    margin:2em 0;
+                    width:100%;
+                }
+            }
         </style>
     </head>
     <body>
+        <h2>Projects</h2>
         <div id="grid">
-            <a class="card" href="#">
-                <img alt="" class="" src="images/msweeper.PNG">
+            <div class="card">
+                <img alt="" class="bg" src="images/msweeper.PNG">
                 <div class="overlay">
                     <h3>MSweeper</h3>
                     <p>Node WebApp clone of the popular Minesweeper game</p>
+                    <div class="button-row">
+                        <button>Learn More</button>
+                        <a class="button" href="#">View Project</a>
+                    </div>
                 </div>
-            </a>
-            <a class="card" href="#">
-                <img alt="" class="" src="images/astro-trivia.png">
+            </div>
+            <div class="card">
+                <img alt="" class="bg" src="images/astro-trivia.png">
                 <div class="overlay">
                     <h3>astro-trivia.com</h3>
                     <p>Trivia game website that generates random astronomy questions</p>
+                    <div class="button-row">
+                        <button>Learn More</button>
+                        <a class="button" href="#">View Project</a>
+                    </div>
                 </div>
-            </a>
-            <a class="card" href="#">
-                <img alt="" class="" src="images/terrain.png">
+            </div>
+            <div class="card">
+                <img alt="" class="bg" src="images/terrain.png">
                 <div class="overlay">
                     <h3>Terrain Generator</h3>
-                    <p>3D WebGL terrain generator user controls and realistic lighting</p>
+                    <p>3D WebGL terrain generator with adjustable controls and realistic lighting</p>
+                    <div class="button-row">
+                        <button>Learn More</button>
+                        <a class="button" href="#">View Project</a>
+                    </div>
                 </div>
-            </a>
+            </div>
         </div>
     </body>
 </html>

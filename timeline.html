@@ -3,42 +3,9 @@
     <head>
         <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;700;900&display=swap" rel="stylesheet">
         <style>
-            body {
-                background-color:#333;
-                color:#fff;
-                font-family:"Titillium Web", Arial, Helvetica, sans-serif;
-            }
-            h2 {
-                font-size:2em;
-                text-align:center;
-                text-transform:uppercase;
-            }
-            h3 {
-                font-size:2em;
-                font-weight:normal;
-                margin:0;
-            }
-            h4 {
-                font-size:1.25em;
-                margin:1em 0;
-            }
-            section {
-                display:flex;
-                flex-direction:column;
-                justify-content:center;
-                padding:1em;
-            }
-            ul {
-                margin:0;
-                padding:0;
-            }
-            ul li {
-                list-style:none;
-                opacity:0.6;
-            }
             #bsu {
-                border-right:0.5em solid #d64309;
-                height:1340px;
+                border-right:3px solid #d64309;
+                height:1085px;
                 padding-right:1em;
                 text-align:right;
             }
@@ -46,8 +13,8 @@
                 color:#d64309;
             }
             #bbcom {
-                border-left:0.5em solid #00aeef;
-                height:820px;
+                border-left:3px solid #00aeef;
+                height:715px;
                 padding:1em;
             }
             #bbcom h3 {
@@ -63,34 +30,31 @@
                 justify-content:flex-end;
             }
             #mtchs {
-                border-right:0.5em solid #b52022;
-                height:960px;
+                border-right:3px solid #b52022;
+                height:603px;
             }
             #mtchs h3 {
                 color:#b52022;
             }
             #oit {
-                border-left:0.5em solid #0033a0;
-                height:520px;
+                border-left:3px solid #0051ff;
+                height:205px;
                 padding:1em;
             }
             #oit h3 {
-                color:#0033a0;
+                color:#0051ff;
             }
             #timeline {
-                padding:0 2em;
-            }
-            #timeline h2 {
-                text-align:center;
+                padding:0 50px;
             }
             #socialeyes {
-                border-left:0.5em solid #5cb1e2;
+                border-left:3px solid #5cb1e2;
+                height:450px;
             }
             #socialeyes h3 {
                 color:#5cb1e2;
             }
             #wrapper {
-                background:linear-gradient(#33334c, #000);
                 display:flex;
                 justify-content:center;
             }
@@ -99,6 +63,7 @@
                 display:flex;
                 font-size:3em;
                 font-weight:bold;
+                margin:0;
                 opacity:0.5;
             }
             .date span {
@@ -107,9 +72,9 @@
             .season {
                 background-color:#666;
                 border-radius:50%;
-                height:0.25em;
-                margin:2em auto;
-                width:0.25em;
+                height:5px;
+                margin:25px auto;
+                width:5px;
             }
             .vert {
                 font-size:0.4em;
@@ -120,22 +85,54 @@
             }
             .year {
                 align-items:center;
-                border:0.1em solid #fff;
+                border:1px solid #fff;
                 border-radius:50%;
                 color:#fff;
                 display:flex;
-                font-size:1em;
+                font-size:13px;
                 height:3.5em;
                 justify-content:center;
-                margin:1em auto;
+                margin:25px auto;
                 width:3.5em;
+            }
+            body {
+                background-color:#111;
+                color:#fff;
+                font-family:"Titillium Web", Arial, Helvetica, sans-serif;
+            }
+            h2 {
+                font-size:2em;
+                text-align:center;
+                text-transform:uppercase;
+            }
+            h3 {
+                font-size:2em;
+                font-weight:normal;
+                margin:0;
+            }
+            h4 {
+                font-size:1.25em;
+                margin:0.5em 0;
+            }
+            section {
+                display:flex;
+                flex-direction:column;
+                justify-content:center;
+                padding:30px;
+            }
+            ul {
+                margin:0;
+                padding:0;
+            }
+            ul li {
+                list-style:none;
+                opacity:0.6;
             }
         </style>
     </head>
     <body>
         <div id="wrapper">
             <div id="education">
-                <h2>Education</h2>
                 <section id="bsu">
                     <h4 class="date">
                         <span class="vert">Aug</span>
@@ -144,7 +141,7 @@
                         <span>2020</span>
                     </h4>
                     <h3>Boise State University</h3>
-                    <h4>Bachelor of Computer Science</h4>
+                    <h4>Bachelor's of Science, Computer Science</h4>
                     <ul>
                         <li>Algorithms</li>
                         <li>Bash</li>
@@ -179,7 +176,6 @@
                 </section>
             </div>
             <div id="timeline">
-                <h2>Present</h2>
                 <div class="season"></div>
                 <div class="season"></div>
                 <div class="year">2020</div>
@@ -232,7 +228,6 @@
                 <div class="season"></div>
             </div>
             <div id="employment">
-                <h2>Employment</h2>
                 <section id="bbcom">
                     <h4 class="date">
                         <span class="vert">Feb</span>
@@ -279,6 +274,12 @@
                         <span>2014</span>
                     </h4>
                     <h3>SocialEyes Marketing</h3>
+                    <h4>Website Designer &amp; Developer</h4>
+                    <ul>
+                        <li>Created Detailed Website Mock-Ups</li>
+                        <li>Developed Custom WordPress Themes</li>
+                    </ul>
+                    <h4>Student Intern</h4>
                 </section>
             </div>
         </div>
