@@ -1,20 +1,21 @@
-var ELEMENT_ID = "job-title";
+var ELEMENT_ID = 'job-title';
 var STATE = 1;
 var titles = [
-    "computer scientist",
-    "full-stack developer",
-    "software engineer",
-    "front-end developer",
-    "web developer",
-    "computer programmer",
-    "web designer",
-    "ux engineer"
+    'computer scientist',
+    'full-stack developer',
+    'software engineer',
+    'front-end developer',
+    'web developer',
+    'computer programmer',
+    'web designer',
+    'ux engineer',
+    'graphic designer'
 ];
 var index = 0;
 function backspace() {
     var element = document.getElementById(ELEMENT_ID);
     var text = element.innerHTML;
-    if(text != "") {
+    if(text != '') {
         var delay = getRandom(10, 50);
         element.innerHTML = text.substr(0, text.length - 1);
         setTimeout(backspace, delay);
@@ -25,7 +26,7 @@ function backspace() {
 }
 function blinkCursor() {
     var element = document.getElementById(ELEMENT_ID);
-    element.classList.toggle("cursor");
+    element.classList.toggle('cursor');
     setTimeout(blinkCursor, 400);
 }
 function getRandom(min, max) {
@@ -69,4 +70,4 @@ function type(word) {
         nextState();
     }
 }
-window.addEventListener("load", initTypeTitle);
+window.addEventListener('load', initTypeTitle);
