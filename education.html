@@ -8,14 +8,133 @@
             box-sizing:border-box;
             font-family:"Titillium Web", sans-serif;
         }
+        #bsu {
+            border-color:#d64309;
+        }
+        #bsu h3 {
+            color:#d64309;
+        }
+        #edu {
+            display:flex;
+            justify-content:center;
+        }
+        #mtchs {
+            border-color:#b62127;
+        }
+        #mtchs h3 {
+            color:#b62127;
+        }
+        .button {
+            background-color:#fff;
+            border-radius:8px;
+            color:#000;
+            cursor:pointer;
+            display:block;
+            font-size:18px;
+            font-weight:bold;
+            margin:0 auto -20px;
+            max-width:200px;
+            padding:10px 20px;
+            position:relative;
+            text-align:center;
+            text-decoration:none;
+            text-transform:uppercase;
+            transition:300ms all;
+        }
+        .button:hover {
+            background-color:#ffd400;
+            color:#000;
+        }
+        .desc {
+            padding:20px 20px 20px 0;
+        }
+        .header {
+            align-items:center;
+            display:flex;
+        }
+        .logo {
+            align-items:center;
+            background-color:#fff;
+            border-radius:50%;
+            display:flex;
+            height:80px;
+            justify-content:center;
+            margin:20px;
+            padding:15px;
+            position:relative;
+            width:80px;
+        }
+        .school {
+            border:1px solid rgba(255, 255, 255, 0.1);
+            border-radius:8px;
+            margin:20px;
+            width:550px;
+        }
+        .school ul {
+            display:flex;
+            flex-wrap:wrap;
+            list-style:none;
+            margin:0 -5px;
+            padding:0 15px 15px;
+        }
+        .school ul li {
+            background-color:rgba(255, 255, 255, 0.25);
+            border-radius:4px;
+            display:block;
+            margin:5px;
+            padding:5px 10px;
+        }
         body {
             background:linear-gradient(#111118, #111118);
             color:#fff;
             padding:20px;
         }
+        h1 {
+            font-size:3em;
+            text-align:center;
+            text-transform:uppercase;
+        }
+        h2, h3 {
+            margin:0;
+        }
+        h4 {
+            color:#666;
+            margin:0;
+        }
+        img {
+            display:block;
+            margin:0 auto;
+            max-width:100%;
+        }
     </style>
 </head>
 <body>
     <h1>Education</h1>
+    <div id='edu'>
+        <div class='school' id='bsu'>
+            <div class='header'>
+                <div class='logo'>
+                    <img src='images/logo-bsu.png'>
+                </div>
+                <div class='desc'>
+                    <h2>B.S. Computer Science</h2>
+                    <h3>Boise State University</h3>
+                    <h4>May 2020</h4>
+                </div>
+            </div>
+        </div>
+        <div class='school' id='mtchs'>
+            <div class='header'>
+                <div class='logo'>
+                    <img src='images/logo-mtchs.png'>
+                </div>
+                <div class='desc'>
+                    <h2>Professional-Technical Diploma</h2>
+                    <h3>Meridian Technical Charter High School</h3>
+                    <h4>May 2013</h4>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
