@@ -24,6 +24,7 @@
             background-color:rgba(255, 255, 255, 0.25);
             height:4px;
             margin:10px 0;
+            position:relative;
             transition:all 250ms;
             width:40px;
         }
@@ -39,13 +40,13 @@
             background-color:#fff;
         }
         #toggle.active .bar:nth-child(1) {
-            transform:translate(10px 10px) rotate(45deg);
+            transform:rotate(45deg) translate(10px, 10px);
         }
         #toggle.active .bar:nth-child(2) {
             opacity:0;
         }
         #toggle.active .bar:nth-child(3) {
-            transform:rotate(-45deg);
+            transform:rotate(-45deg) translate(10px, -10px);
         }
         body {
             background-color:#111118;
