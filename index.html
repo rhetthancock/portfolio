@@ -7,7 +7,6 @@
     <link href='styles.css' rel='stylesheet' type='text/css'>
     <script src='background.js'></script>
     <script src='navigation.js'></script>
-    <script src='search.js'></script>
     <script src='type-title.js'></script>
     <script src='expand.js'></script>
 </head>
@@ -24,20 +23,24 @@
             <div class='bar'></div>
             <div class='bar'></div>
         </div>
+        <a href='#'>Intro</a>
         <a href='#projects'>Projects</a>
         <a href='#about'>About</a>
         <a href='#experience'>Experience</a>
         <a href='#contact'>Contact</a>
         <a href='#resume'>Resume</a>
     </nav>
+    <a id='top-arrow' href='#'>
+        <div class='bar'></div>
+        <div class='bar'></div>
+    </a>
     <section id='landing'>
         <img alt='RH' id='big-logo' src='images/logo.svg'>
         <h1>
             <span class='intro'>Hi, my name is</span>
             <span class='name'>Rhett Hancock</span>
         </h1>
-        <p id='intro'>I'm a <span id='job-title'>computer scientist</span> living in Meridian, Idaho and I like to design, code &
-            create new things.</p>
+        <p id='intro'>I'm a <span id='job-title'>computer scientist</span> living in Meridian, Idaho and I like to code, design & create new things.</p>
         <a class='cta' href='#projects'>See My Work</a>
     </section>
     <section id='projects'>
@@ -109,7 +112,7 @@
             <div class='project-desc'>
                 <h3>Micron Global Quality Crossword</h3>
                 <h4>Senior Design Project, Fall 2019</h4>
-                <p>Designed & developed the front-end for an online crossword puzzle app sponsored by the Micron Global Quality Assurance Department.</p>
+                <p>Designed & developed the front-end for a custom online crossword puzzle app for the Micron Global Quality Assurance Department.</p>
                 <ul>
                     <li>Adobe XD</li>
                     <li>JavaScript</li>
@@ -129,15 +132,21 @@
         </div>
         <div id='bio'>
             <h2>About Me</h2>
-            <p><strong>Hello and welcome! My name is Rhett, I'm a full-stack developer & designer with 8+ years of professional experience.</strong></p>
+            <p><strong>Hello and welcome to my portfolio website! My name is Rhett, I'm a full-stack developer & designer with 8+ years of professional experience.</strong></p>
             <p>I really enjoy working on projects that live on the Internet, from designing & developing entire websites, to creating highly interactive & visual applications. I pride myself on my creativity and pixel-perfect attention to detail.</p>
             <p>In May 2020, I graduated from Boise State University with a B.S. Computer Science degree. During my studies, I maintained full-time employment, working in a variety of different roles, including as a website designer & developer, support analyst, documentation specialist, and most-recently as a front-end engineer.</p>
-            <a class='cta' href='#experience'>Review My Experience</a>
+            <p>I spend my free time doing all sorts of fun things:</p>
+            <ul>
+                <li>PC Gaming (Minecraft)</li>
+                <li>Astrophotography</li>
+                <li>Traveling The World</li>
+            </ul>
+            <a class='cta' href='#experience'>See My Experience</a>
         </div>
     </section>
     <section id='experience'>
         <div class='col'>
-            <h3>Education</h3>
+            <h2>Education</h2>
             <div class='bsu block'>
                 <h3><span class='month'>Aug </span>2013 - <span class='month'>May </span>2020</h3>
                 <h4>Boise State University</h4>
@@ -181,7 +190,7 @@
             </div>
         </div>
         <div class='col'>
-            <h3>Employment</h3>
+            <h2>Employment</h2>
             <div class='bbcom block'>
                 <h3><span class='month'>Feb </span>2016 - Present</h3>
                 <h4>Bodybuilding.com</h4>
@@ -224,7 +233,7 @@
             </div>
         </div>
         <div class='col'>
-            <h3>Skills</h3>
+            <h2>Skills</h2>
             <div id='search-container' style='display:none;'>
                 <label id='search-label' for='search'>Search skills</label>
                 <input id='search' type='text'>
@@ -268,6 +277,8 @@
         </div>
     </section>
     <section id='contact'>
+        <h2>Contact Me</h2>
+        <p>Are you looking for an exceptional developer/engineer for your company? Have an interesting project that you would like to work on?</p>
         <a class='cta' href='mailto:hancockrhett@gmail.com'>Get In Touch</a>
     </section>
     <footer>

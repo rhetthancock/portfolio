@@ -1,30 +1,50 @@
 let ticking = false;
 
+// Element pointers
+let arrow;
+let logo;
+let nav;
+let toggle;
+
+// Check the position of the scroll
 function checkPosition(scroll_pos) {
-    let logo = document.getElementById("logo");
+    // Assign states
     if(scroll_pos >= window.innerHeight - 150) {
-        logo.classList.add("active");
+        logo.classList.add('active');
+        arrow.classList.add('active');
     }
     else {
-        logo.classList.remove("active");
+        logo.classList.remove('active');
+        arrow.classList.remove('active');
     }
 }
 
-window.addEventListener("scroll", (event) => {
-    let scroll_pos = window.scrollY;
-    if(!ticking) {
-        window.requestAnimationFrame(function() {
-            checkPosition(scroll_pos);
-            ticking = false;
-        });
-        ticking = true;
-    }
-});
-
+// When page loads
 window.addEventListener('load', function() {
-    let nav = document.getElementById('nav');
-    let toggle = document.getElementById('nav-toggle');
+    // Assign element pointers
+    arrow = document.getElementById('top-arrow');
+    logo = document.getElementById('logo');
+    nav = document.getElementById('nav');
+    toggle = document.getElementById('nav-toggle');
+
+    // Make hamburger menu togglable
     toggle.addEventListener('click', function() {
         nav.classList.toggle('active');
+    });
+
+    // Fire at least once for anchor links
+    checkPosition(window.scrollY);
+
+    // Add user scroll listener
+    window.addEventListener('scroll', (event) => {
+        let scroll_pos = window.scrollY;
+        if(!ticking) {
+            // Smooth out browser request for scroll position
+            window.requestAnimationFrame(function() {
+                checkPosition(scroll_pos);
+                ticking = false;
+            });
+            ticking = true;
+        }
     });
 });
