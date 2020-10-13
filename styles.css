@@ -18,6 +18,11 @@ footer {
     padding:40px;
     position:absolute;
 }
+footer p {
+    color:#555;
+    font-size:16px;
+    margin:0;
+}
 h2 {
     font-size:64px;
     text-align:center;
@@ -82,6 +87,10 @@ section:last-child {
     font-weight:bold;
     text-decoration:underline;
     text-decoration-color:#666;
+    transition:all 250ms;
+}
+#bio li:hover {
+    color:#ffd400;
 }
 #bio p {
     font-size:20px;
@@ -89,9 +98,14 @@ section:last-child {
 #bio strong {
     color:#ffd400;
 }
+#closing {
+    font-size:24px;
+    margin:40px 0 70px;
+    max-width:690px;
+}
 #copyright {
     color:#444;
-    font-size:18px;
+    font-size:16px;
     margin:0;
     text-align:center;
 }
@@ -107,8 +121,6 @@ section:last-child {
     margin:0;
 }
 #contact p {
-    font-size:24px;
-    max-width:690px;
     text-align:center;
 }
 #experience {
@@ -216,6 +228,11 @@ section:last-child {
 #nav a:hover {
     color:#fff;
 }
+#nav a.box {
+    border:1px solid;
+    margin:30px;
+    padding:5px 15px;
+}
 #nav.active a {
     opacity:1;
     visibility:visible;
@@ -267,7 +284,10 @@ section:last-child {
     color:#000;
 }
 #profile {
-    max-width:500px;
+    border:1px solid #ffd400;
+    border-radius:50%;
+    max-width:600px;
+    padding:20px;
 }
 #projects {
     align-content:center;
