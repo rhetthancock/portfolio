@@ -14,8 +14,9 @@ body {
     position:relative;
 }
 footer {
+    bottom:0;
     padding:40px;
-    position:relative;
+    position:absolute;
 }
 h2 {
     font-size:64px;
@@ -33,9 +34,13 @@ img {
     max-width:100%;
 }
 section {
+    margin-bottom:25%;
     padding:40px 200px;
     position:relative;
     width:100%;
+}
+section:last-child {
+    margin-bottom:0;
 }
 
 #about {
@@ -85,7 +90,7 @@ section {
     color:#ffd400;
 }
 #copyright {
-    color:#666;
+    color:#444;
     font-size:18px;
     margin:0;
     text-align:center;
@@ -102,9 +107,8 @@ section {
     margin:0;
 }
 #contact p {
-    font-size:22px;
-    margin:40px 0;
-    max-width:700px;
+    font-size:24px;
+    max-width:690px;
     text-align:center;
 }
 #experience {

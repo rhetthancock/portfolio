@@ -1,3 +1,4 @@
+// Scroll listener toggle
 let ticking = false;
 
 // Element pointers
@@ -9,7 +10,7 @@ let toggle;
 // Check the position of the scroll
 function checkPosition(scroll_pos) {
     // Assign states
-    if(scroll_pos >= window.innerHeight - 150) {
+    if(scroll_pos >= 0.8 * window.innerHeight) {
         logo.classList.add('active');
         arrow.classList.add('active');
     }
