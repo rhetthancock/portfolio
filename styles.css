@@ -98,6 +98,19 @@ section:last-child {
 #bio strong {
     color:#ffd400;
 }
+#bsu-link {
+    color:#fff;
+    font-weight:bold;
+    text-decoration-color:#666;
+    transition:all 250ms;
+}
+#bsu-link:hover {
+    color:#d64309;
+    text-decoration-color:#406098;
+}
+#captions {
+    position:relative;
+}
 #closing {
     font-size:24px;
     margin:40px 0 70px;
@@ -129,6 +142,15 @@ section:last-child {
 }
 #experience h2 {
     text-align:left;
+}
+#gallery-img {
+    border:1px solid #ffd400;
+    border-radius:50%;
+    max-width:600px;
+    padding:20px;
+}
+#gallery img {
+    transition:all 500ms;
 }
 #intro {
     font-size:1.5em;
@@ -230,6 +252,7 @@ section:last-child {
 }
 #nav a.box {
     border:1px solid;
+    border-radius:4px;
     margin:30px;
     padding:5px 15px;
 }
@@ -282,12 +305,6 @@ section:last-child {
 #primary a:hover {
     border:2px dashed #000;
     color:#000;
-}
-#profile {
-    border:1px solid #ffd400;
-    border-radius:50%;
-    max-width:600px;
-    padding:20px;
 }
 #projects {
     align-content:center;
@@ -488,6 +505,18 @@ section:last-child {
 .button-group .cta {
     margin:20px;
 }
+.caption {
+    color:#666;
+    font-size:18px;
+    margin:40px auto;
+    position:absolute;
+    text-align:center;
+    transition:all 250ms;
+    width:100%;
+}
+.caption.hide {
+    margin:0;
+}
 .col {
     padding:4em;
 }
@@ -540,6 +569,9 @@ section:last-child {
     display:block;
     height:25px;
     width:25px;
+}
+.line {
+    display:block;
 }
 .loaded #background {
     opacity:1;
