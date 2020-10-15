@@ -95,6 +95,9 @@ section:last-child {
 #bio p {
     font-size:20px;
 }
+#bio ul {
+    width:300px;
+}
 #bio strong {
     color:#ffd400;
 }

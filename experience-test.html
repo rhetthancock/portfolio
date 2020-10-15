@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Portfolio Experience Test</title>
+        <style>
+            * {
+                box-sizing:border-box;
+                font-family:"Titillium Web", sans-serif;
+            }
+            #bbcom {
+                padding:20px;
+            }
+            #bbcom::after {
+                background-color:#00aeef;
+            }
+            #bbcom-exp {
+                border-color:#00aeef;
+            }
+            #bbcom-exp .name {
+                color:#00aeef;
+            }
+            #bsu::after {
+                background-color:#d64309;
+            }
+            #bsu-exp {
+                border-color:#d64309;
+            }
+            #bsu-exp .name {
+                color:#d64309;
+            }
+            #degree {
+                display:flex;
+            }
+            #experience {
+                align-items:center;
+                display:flex;
+                justify-content:center;
+                padding:200px;
+            }
+            #mtchs {
+                padding:20px;
+            }
+            #mtchs::after {
+                background-color:#b52022
+            }
+            #mtchs-exp {
+                border-color:#b52022;
+            }
+            #mtchs-exp .name {
+                color:#b52022;
+            }
+            #oit::after {
+                background-color:#0033a0;
+            }
+            #sem::after {
+                background-color:#5cb1e2;
+            }
+            .block {
+                display:Flex;
+            }
+            .col {
+                max-width:950px;
+                padding:40px 100px;
+            }
+            .col:first-child h2 {
+                text-align:right;
+            }
+            .col:first-child .group {
+                justify-content:flex-end;
+            }
+            .col:first-child .exp {
+                border-right:2px solid #fff;
+                text-align:right;
+            }
+            .col:nth-child(2) .exp {
+                border-left:2px solid #fff;
+            }
+            .exp {
+                margin-top:40px;
+                padding:0 40px;
+            }
+            .exp h3 {
+                margin-bottom:0;
+                margin-top:0;
+            }
+            .exp h5 {
+                color:#666;
+                font-size:28px;
+                font-weight:normal;
+                margin:10px 0;
+                text-transform:uppercase;
+            }
+            .exp ul.desc {
+                list-style:none;
+                padding:0;
+            }
+            .exp ul.desc li {
+                color:#999;
+                font-size:18px;
+                margin:20px 0;
+            }
+            .group {
+                display:flex;
+                margin:-10px;
+            }
+            .month {
+                display:inline-block;
+                font-size:0.4em;
+                font-weight:normal;
+                line-height:1em;
+                position:relative;
+                text-transform:uppercase;
+                transform:rotate(270deg);
+                top:-0.35em;
+            }
+            .name {
+                font-size:36px;
+            }
+            .tab {
+                align-items:center;
+                border:3px solid #fff;
+                border-radius:50%;
+                cursor:pointer;
+                display:flex;
+                height:100px;
+                justify-content:center;
+                margin:10px;
+                padding:25px;
+                position:relative;
+                transition:all 300ms;
+                user-select:none;
+                width:100px;
+            }
+            .tab img {
+                filter:drop-shadow(0 0 10px rgba(0, 0, 0, 0.75));
+                z-index:100;
+            }
+            .tab::after {
+                z-index:75;
+            }
+            .tab::after,
+            .tab::before {
+                border-radius:50%;
+                content:'';
+                display:block;
+                height:0;
+                position:absolute;
+                transition:all 250ms;
+                width:0;
+            }
+            .tab::before {
+                background-color:#ffd400;
+                z-index:25;
+            }
+            .tab.active::after,
+            .tab:hover::before {
+                height:100%;
+                width:100%;
+            }
+            .tab.active {
+                border-color:transparent;
+            }
+            .tab.active:hover {
+                border-color:#fff;
+            }
+            .tokens {
+                display:flex;
+                flex-wrap:wrap;
+                justify-content:flex-end;
+                list-style:none;
+            }
+            .tokens li {
+                background:rgba(255, 255, 255, 0.25);
+                border-radius:4px;
+                display:block;
+                margin:4px;
+                padding:5px 10px;
+            }
+            .timeline {
+                color:#666;
+                font-size:48px;
+                line-height:1em;
+                margin-left:-0.15em;
+            }
+            .title {
+                font-size:22px;
+                margin:0;
+            }
+            body {
+                background-color:#111118;
+                color:#fff;
+            }
+            h2 {
+                font-size:64px;
+                margin:20px 0;
+                text-transform:uppercase;
+            }
+            img {
+                display:block;
+                margin:0 auto;
+                max-height:100%;
+                max-width:100%;
+            }
+        </style>
+        <script>
+            // Toggle active
+            window.addEventListener('load', (event) => {
+                let tabs = document.getElementsByClassName('tab');
+                for(let i = 0; i < tabs.length; i++) {
+                    tabs[i].addEventListener('click', (event) => {
+                        tabs[i].classList.toggle('active');
+                    });
+                }
+            });
+        </script>
+    </head>
+    <body>
+        <section id='experience'>
+            <div class='block'>
+                <div class='col'>
+                    <h2>Education</h2>
+                    <div class='group'>
+                        <div class='tab active' id='bsu'>
+                            <img alt='BSU Logo' src='images/logo-bsu-white.png'>
+                        </div>
+                        <div class='tab' id='mtchs'>
+                            <img alt='MTCHS Logo' src='images/logo-mtchs-white.png'>
+                        </div>
+                    </div>
+                    <div class='exp' id='bsu-exp'>
+                        <h3 class='timeline'><span class='month'>Aug</span> 2013 - <span class='month'>May</span> 2020</h3>
+                        <h3 class='name'>Boise State University</h3>
+                        <h4 class='title'>Bachelor of Science, Computer Science</h4>
+                        <h5>Elective Courses</h5>
+                        <ul class='tokens'>
+                            <li>Computer Graphics</li>
+                            <li>Databases</li>
+                            <li>Ethical Hacking</li>
+                            <li>Web Development</li>
+                            <li>Computer Architecture</li>
+                            <li>Cryptology</li>
+                        </ul>
+                        <h5>CS Fundamentals</h5>
+                        <ul class='tokens'>
+                            <li>Algorithms</li>
+                            <li>Software Engineering</li>
+                            <li>Operating Systems</li>
+                            <li>Data Structures</li>
+                            <li>Programming Languages</li>
+                            <li>Theory of Computation</li>
+                            <li>Microprocessors</li>
+                            <li>Digital Systems</li>
+                            <li>Systems Programming</li>
+                            <li>Java</li>
+                        </ul>
+                    </div>
+                    <div class='exp' id='mtchs-exp'>
+                        <h3 class='timeline'><span class='month'>Aug</span> 2009 - <span class='month'>May</span> 2013</h3>
+                        <h3 class='name'>Meridian Technical Charter High School</h3>
+                        <h4 class='title'>Professional-Technical Diploma</h4>
+                    </div>
+                </div>
+                <div class='col'>
+                    <h2>Employment</h2>
+                    <div class='group'>
+                        <div class='tab active' id='bbcom'>
+                            <img alt='Bodybuilding.com Logo' src='images/logo-bbcom-white.png'>
+                        </div>
+                        <div class='tab' id='oit'>
+                            <img alt='BSU Logo' src='images/logo-bsu-white.png'>
+                        </div>
+                        <div class='tab' id='sem'>
+                            <img alt='SocialEyes Marketing Logo' src='images/logo-se.png'>
+                        </div>
+                    </div>
+                    <div class='exp' id='bbcom-exp'>
+                        <h3 class='timeline'><span class='month'>Feb</span> 2016 - <span class='month'>Aug</span> 2020</h3>
+                        <h3 class='name'>Bodybuilding.com</h3>
+                        <h4 class='title'>Front-End Engineer</h4>
+                        <ul class='desc'>
+                            <li>Collaborated on the redesign and development of a custom help center webapp using Adobe Photoshop, JavaScript & jQuery. Successfully launched with 1,200+ average daily views and achieved decrease in related contacts to the customer service center.</li>
+                            <li>Converted 650+ unique Photoshop designs into functional, responsive, accessible, seo-friendly & cross-browser compatible HTML, CSS, JavaScript & jQuery content.</li>
+                        </ul>
+                        <h4 class='title'>Documentation Specialist</h4>
+                        <ul class='desc'>
+                            <li>Documented & revised 250+ operating procedures, authored library of 200+ email & live chat canned responses, developed custom website theme, organized and maintained internal knowledge base website for customer service center of 150+ employees.</li>
+                            <li>Assisted with testing, configuration & deployment of Bold360 live chat system.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>
