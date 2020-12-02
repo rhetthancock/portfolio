@@ -52,8 +52,23 @@
             #oit::after {
                 background-color:#0033a0;
             }
+            #oit-exp {
+                border-color:#0033a0;
+            }
+            #oit-exp .name {
+                color:#0033a0;
+            }
+            #oit-exp .sub {
+                color:#d14109;
+            }
             #sem::after {
                 background-color:#5cb1e2;
+            }
+            #sem-exp {
+                border-color:#5cb1e2;
+            }
+            #sem-exp .name {
+                color:#5cb1e2;
             }
             .block {
                 display:Flex;
@@ -76,8 +91,12 @@
                 border-left:2px solid #fff;
             }
             .exp {
-                margin-top:40px;
+                height:0;
+                opacity:0;
+                overflow:hidden;
                 padding:0 40px;
+                transition:400ms all;
+                visibility:hidden;
             }
             .exp h3 {
                 margin-bottom:0;
@@ -99,6 +118,12 @@
                 font-size:18px;
                 margin:20px 0;
             }
+            .exp.active {
+                height:auto;
+                margin-top:40px;
+                opacity:1;
+                visibility:visible;
+            }
             .group {
                 display:flex;
                 margin:-10px;
@@ -115,6 +140,9 @@
             }
             .name {
                 font-size:36px;
+            }
+            .sub {
+                font-size:30px;
             }
             .tab {
                 align-items:center;
@@ -205,13 +233,66 @@
         <script>
             // Toggle active
             window.addEventListener('load', (event) => {
-                let tabs = document.getElementsByClassName('tab');
-                for(let i = 0; i < tabs.length; i++) {
-                    tabs[i].addEventListener('click', (event) => {
-                        tabs[i].classList.toggle('active');
-                    });
-                }
-            });
+                let bsu = document.getElementById('bsu');
+                let mtchs = document.getElementById('mtchs');
+                let bbcom = document.getElementById('bbcom');
+                let oit = document.getElementById('oit');
+                let sem = document.getElementById('sem');
+
+                let bsu_exp = document.getElementById('bsu-exp');
+                let mtchs_exp = document.getElementById('mtchs-exp');
+                let bbcom_exp = document.getElementById('bbcom-exp');
+                let oit_exp = document.getElementById('oit-exp');
+                let sem_exp = document.getElementById('sem-exp');
+
+                bsu.addEventListener('click', (event) => {
+                    bsu.classList.add('active');
+                    bsu_exp.classList.add('active');
+                    mtchs.classList.remove('active');
+                    mtchs_exp.classList.remove('active');
+                });
+
+                mtchs.addEventListener('click', (event) => {
+                    mtchs.classList.add('active');
+                    mtchs_exp.classList.add('active');
+                    bsu.classList.remove('active');
+                    bsu_exp.classList.remove('active');
+                });
+
+                bbcom.addEventListener('click', (event) => {
+                    bbcom.classList.add('active');
+                    bbcom_exp.classList.add('active');
+                    oit.classList.remove('active');
+                    oit_exp.classList.remove('active');
+                    sem.classList.remove('active');
+                    sem_exp.classList.remove('active');
+                });
+
+                oit.addEventListener('click', (event) => {
+                    oit.classList.add('active');
+                    oit_exp.classList.add('active');
+                    bbcom.classList.remove('active');
+                    bbcom_exp.classList.remove('active');
+                    sem.classList.remove('active');
+                    sem_exp.classList.remove('active');
+                });
+
+                sem.addEventListener('click', (event) => {
+                    sem.classList.add('active');
+                    sem_exp.classList.add('active');
+                    bbcom.classList.remove('active');
+                    bbcom_exp.classList.remove('active');
+                    oit.classList.remove('active');
+                    oit_exp.classList.remove('active');
+                });
+
+                // let tabs = document.getElementsByClassName('tab');
+                // for(let i = 0; i < tabs.length; i++) {
+                //     tabs[i].addEventListener('click', (event) => {
+                //         tabs[i].classList.toggle('active');
+                //     });
+                // }
+            }); 
         </script>
     </head>
     <body>
@@ -227,7 +308,7 @@
                             <img alt='MTCHS Logo' src='images/logo-mtchs-white.png'>
                         </div>
                     </div>
-                    <div class='exp' id='bsu-exp'>
+                    <div class='exp active' id='bsu-exp'>
                         <h3 class='timeline'><span class='month'>Aug</span> 2013 - <span class='month'>May</span> 2020</h3>
                         <h3 class='name'>Boise State University</h3>
                         <h4 class='title'>Bachelor of Science, Computer Science</h4>
@@ -240,7 +321,7 @@
                             <li>Computer Architecture</li>
                             <li>Cryptology</li>
                         </ul>
-                        <h5>CS Fundamentals</h5>
+                        <h5>CS Fundamental Courses</h5>
                         <ul class='tokens'>
                             <li>Algorithms</li>
                             <li>Software Engineering</li>
@@ -273,7 +354,7 @@
                             <img alt='SocialEyes Marketing Logo' src='images/logo-se.png'>
                         </div>
                     </div>
-                    <div class='exp' id='bbcom-exp'>
+                    <div class='exp active' id='bbcom-exp'>
                         <h3 class='timeline'><span class='month'>Feb</span> 2016 - <span class='month'>Aug</span> 2020</h3>
                         <h3 class='name'>Bodybuilding.com</h3>
                         <h4 class='title'>Front-End Engineer</h4>
@@ -285,6 +366,26 @@
                         <ul class='desc'>
                             <li>Documented & revised 250+ operating procedures, authored library of 200+ email & live chat canned responses, developed custom website theme, organized and maintained internal knowledge base website for customer service center of 150+ employees.</li>
                             <li>Assisted with testing, configuration & deployment of Bold360 live chat system.</li>
+                        </ul>
+                    </div>
+                    <div class='exp' id='oit-exp'>
+                        <h3 class='timeline'><span class='month'>Jun</span> 2014 - <span class='month'>Feb</span> 2016</h3>
+                        <h3 class='name'>Office of Information Technology</h3>
+                        <h3 class='sub'>Boise State University</h3>
+                        <h4 class='title'>WordPress Support Analyst</h4>
+                        <ul class='desc'>
+                            <li>Created & configured new WordPress sites, installed & configured plugins, resolved support tickets and performed regular updates & maintenance on 740+ university websites.</li>
+                            <li>Trained 50+ faculty & staff members in one-on-one meetings on how to use WordPress, perform updates on their websites, and resolve errors.</li>
+                        </ul>
+                    </div>
+                    <div class='exp' id='sem-exp'>
+                        <h3 class='timeline'><span class='month'>Jun</span> 2012 - <span class='month'>Jun</span> 2014</h3>
+                        <h3 class='name'>SocialEyes Marketing</h3>
+                        <h4 class='title'>Website Designer & Developer</h4>
+                        <ul class='desc'>
+                            <li>Assembled and managed a small team of website designers & developers that built 75+ custom WordPress themes for a variety of local & national clients.</li>
+                            <li>Created logos, business cards, brochures, flyers, restaurant menus, wine labels, and more using Adobe Photoshop and Illustrator.</li>
+                            <li>Completed 280-hour internship building embedded microsites using HTML, CSS, JavaScript, jQuery and designing social media marketing & branding assets.</li>
                         </ul>
                     </div>
                 </div>
