@@ -19,7 +19,7 @@
             #bbcom-exp .name {
                 color:#00aeef;
             }
-            #bsu::after {
+            #bsu::after { 
                 background-color:#d64309;
             }
             #bsu-exp {
@@ -35,7 +35,7 @@
                 align-items:center;
                 display:flex;
                 justify-content:center;
-                padding:200px;
+                padding:100px 200px;
             }
             #mtchs {
                 padding:20px;
@@ -74,7 +74,7 @@
                 color:#ed1b2e;
             }
             .block {
-                display:Flex;
+                display:flex;
             }
             .col {
                 max-width:950px;
@@ -83,7 +83,7 @@
             .col:first-child h2 {
                 text-align:right;
             }
-            .col:first-child .group {
+            .col:first-child .tab-group {
                 justify-content:flex-end;
             }
             .col:first-child .exp {
@@ -130,10 +130,6 @@
                 margin-top:40px;
                 opacity:1;
                 visibility:visible;
-            }
-            .group {
-                display:flex;
-                margin:-10px;
             }
             .month {
                 display:inline-block;
@@ -197,6 +193,10 @@
             }
             .tab.active:hover {
                 border-color:#fff;
+            }
+            .tab-group {
+                display:flex;
+                margin:-10px;
             }
             .tokens {
                 display:flex;
@@ -293,12 +293,6 @@
                     oit_exp.classList.remove('active');
                 });
 
-                // let tabs = document.getElementsByClassName('tab');
-                // for(let i = 0; i < tabs.length; i++) {
-                //     tabs[i].addEventListener('click', (event) => {
-                //         tabs[i].classList.toggle('active');
-                //     });
-                // }
             }); 
         </script>
     </head>
@@ -307,7 +301,7 @@
             <div class='block'>
                 <div class='col'>
                     <h2>Education</h2>
-                    <div class='group'>
+                    <div class='tab-group'>
                         <div class='tab active' id='bsu'>
                             <img alt='BSU Logo' src='images/logo-bsu-white.png'>
                         </div>
@@ -315,56 +309,58 @@
                             <img alt='MTCHS Logo' src='images/logo-mtchs-white.png'>
                         </div>
                     </div>
-                    <div class='exp active' id='bsu-exp'>
-                        <h3 class='timeline'><span class='month'>Aug</span> 2013 - <span class='month'>May</span> 2020</h3>
-                        <h3 class='name'>Boise State University</h3>
-                        <h4 class='title'>Bachelor of Science, Computer Science</h4>
-                        <h5>Elective Courses</h5>
-                        <ul class='tokens'>
-                            <li>Computer Graphics</li>
-                            <li>Databases</li>
-                            <li>Ethical Hacking</li>
-                            <li>Web Development</li>
-                            <li>Computer Architecture</li>
-                            <li>Cryptology</li>
-                        </ul>
-                        <h5>CS Fundamental Courses</h5>
-                        <ul class='tokens'>
-                            <li>Algorithms</li>
-                            <li>Software Engineering</li>
-                            <li>Operating Systems</li>
-                            <li>Data Structures</li>
-                            <li>Programming Languages</li>
-                            <li>Theory of Computation</li>
-                            <li>Microprocessors</li>
-                            <li>Digital Systems</li>
-                            <li>Systems Programming</li>
-                            <li>Java</li>
-                        </ul>
-                    </div>
-                    <div class='exp' id='mtchs-exp'>
-                        <h3 class='timeline'><span class='month'>Aug</span> 2009 - <span class='month'>May</span> 2013</h3>
-                        <h3 class='name'>Meridian Technical Charter High School</h3>
-                        <h4 class='title'>Professional-Technical Diploma</h4>
-                        <ul class='desc'>
-                            <li>MTCHS provided the unique opportunity to take collegiate level courses in programming, web development, media arts &amp; graphic design, computer networking, hardware &amp; electronics, while simultaneously completing the state's curriculum to graduate.</li>
-                        </ul>
-                        <h4 class='title'>SkillsUSA Idaho State Champion</h4>
-                        <ul class='tokens'>
-                            <li>Gold Medal in Entrepreneurship</li>
-                            <li>Gold Medal in Web Design</li>
-                        </ul>
-                        <h5>Certifications</h5>
-                        <ul class='tokens'>
-                            <li>Adobe Certified Associate in Web Communications</li>
-                            <li>Microsoft Technology Associate in Networking Fundamentals</li>
-                            <li>OSHA 10-Hour General Industry</li>
-                        </ul>
+                    <div class='exp-group'>
+                        <div class='exp active' id='bsu-exp'>
+                            <h3 class='timeline'><span class='month'>Aug</span> 2013 - <span class='month'>May</span> 2020</h3>
+                            <h3 class='name'>Boise State University</h3>
+                            <h4 class='title'>Bachelor of Science, Computer Science</h4>
+                            <h5>Elective Courses</h5>
+                            <ul class='tokens'>
+                                <li>Computer Graphics</li>
+                                <li>Databases</li>
+                                <li>Ethical Hacking</li>
+                                <li>Web Development</li>
+                                <li>Computer Architecture</li>
+                                <li>Cryptology</li>
+                            </ul>
+                            <h5>CS Fundamental Courses</h5>
+                            <ul class='tokens'>
+                                <li>Algorithms</li>
+                                <li>Software Engineering</li>
+                                <li>Operating Systems</li>
+                                <li>Data Structures</li>
+                                <li>Programming Languages</li>
+                                <li>Theory of Computation</li>
+                                <li>Microprocessors</li>
+                                <li>Digital Systems</li>
+                                <li>Systems Programming</li>
+                                <li>Java</li>
+                            </ul>
+                        </div>
+                        <div class='exp' id='mtchs-exp'>
+                            <h3 class='timeline'><span class='month'>Aug</span> 2009 - <span class='month'>May</span> 2013</h3>
+                            <h3 class='name'>Meridian Technical Charter High School</h3>
+                            <h4 class='title'>Professional-Technical Diploma</h4>
+                            <ul class='desc'>
+                                <li>MTCHS provided the unique opportunity to take collegiate level courses in programming, web development, media arts &amp; graphic design, computer networking, hardware &amp; electronics, while simultaneously completing the state's curriculum to graduate.</li>
+                            </ul>
+                            <h4 class='title'>SkillsUSA Idaho State Champion</h4>
+                            <ul class='tokens'>
+                                <li>Gold Medal in Entrepreneurship</li>
+                                <li>Gold Medal in Web Design</li>
+                            </ul>
+                            <h5>Certifications</h5>
+                            <ul class='tokens'>
+                                <li>Adobe Certified Associate in Web Communications</li>
+                                <li>Microsoft Technology Associate in Networking Fundamentals</li>
+                                <li>OSHA 10-Hour General Industry</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
                 <div class='col'>
                     <h2>Employment</h2>
-                    <div class='group'>
+                    <div class='tab-group'>
                         <div class='tab active' id='bbcom'>
                             <img alt='Bodybuilding.com Logo' src='images/logo-bbcom-white.png'>
                         </div>
@@ -375,46 +371,48 @@
                             <img alt='SocialEyes Marketing Logo' src='images/logo-se.png'>
                         </div>
                     </div>
-                    <div class='exp active' id='bbcom-exp'>
-                        <h3 class='timeline'><span class='month'>Feb</span> 2016 - <span class='month'>Aug</span> 2020</h3>
-                        <h3 class='name'>Bodybuilding.com</h3>
-                        <h4 class='title'>Front-End Engineer</h4>
-                        <ul class='desc'>
-                            <li>Collaborated on the redesign and development of a custom help center webapp using Adobe Photoshop, JavaScript & jQuery. Successfully launched with 1,200+ average daily views and achieved decrease in related contacts to the customer service center.</li>
-                            <li>Converted 650+ unique Photoshop designs into functional, responsive, accessible, seo-friendly & cross-browser compatible HTML, CSS, JavaScript & jQuery content.</li>
-                        </ul>
-                        <h4 class='title'>Documentation Specialist</h4>
-                        <ul class='desc'>
-                            <li>Documented & revised 250+ operating procedures, authored library of 200+ email & live chat canned responses, developed custom website theme, organized and maintained internal knowledge base website for customer service center of 150+ employees.</li>
-                            <li>Assisted with testing, configuration & deployment of Bold360 live chat system.</li>
-                        </ul>
-                        <h4 class='title'>Customer Service Representative</h4>
-                        <ul class='desc'>
-                            <li>Assisted 12,000+ customers with resolving order errors and provided tailored consultations on fitness, supplements & nutrition as a top performing agent.</li>
-                        </ul>
-                    </div>
-                    <div class='exp' id='oit-exp'>
-                        <h3 class='timeline'><span class='month'>Jun</span> 2014 - <span class='month'>Feb</span> 2016</h3>
-                        <h3 class='name'>Office of Information Technology</h3>
-                        <h3 class='sub'>Boise State University</h3>
-                        <h4 class='title'>WordPress Support Analyst</h4>
-                        <ul class='desc'>
-                            <li>Created & configured new WordPress sites, installed & configured plugins, resolved support tickets and performed regular updates & maintenance on 740+ university websites.</li>
-                            <li>Trained 50+ faculty & staff members in one-on-one meetings on how to use WordPress, perform updates on their websites, and resolve errors.</li>
-                        </ul>
-                    </div>
-                    <div class='exp' id='sem-exp'>
-                        <h3 class='timeline'><span class='month'>Jun</span> 2012 - <span class='month'>Jun</span> 2014</h3>
-                        <h3 class='name'>SocialEyes Marketing</h3>
-                        <h4 class='title'>Website Designer & Developer</h4>
-                        <ul class='desc'>
-                            <li>Assembled and managed a small team of website designers & developers that built 75+ custom WordPress themes for a variety of local & national clients.</li>
-                            <li>Created logos, business cards, brochures, flyers, restaurant menus, wine labels, and more using Adobe Photoshop and Illustrator.</li>
-                        </ul>
-                        <h4 class='title'>Student Intern</h4>
-                        <ul class='desc'>
-                            <li>Completed 280-hour internship building embedded microsites using HTML, CSS, JavaScript, jQuery and designing social media marketing & branding assets.</li>
-                        </ul>
+                    <div class='exp-group'>
+                        <div class='exp active' id='bbcom-exp'>
+                            <h3 class='timeline'><span class='month'>Feb</span> 2016 - <span class='month'>Aug</span> 2020</h3>
+                            <h3 class='name'>Bodybuilding.com</h3>
+                            <h4 class='title'>Front-End Engineer</h4>
+                            <ul class='desc'>
+                                <li>Collaborated on the redesign and development of a custom help center webapp using Adobe Photoshop, JavaScript & jQuery. Successfully launched with 1,200+ average daily views and achieved decrease in related contacts to the customer service center.</li>
+                                <li>Converted 650+ unique Photoshop designs into functional, responsive, accessible, seo-friendly & cross-browser compatible HTML, CSS, JavaScript & jQuery content.</li>
+                            </ul>
+                            <h4 class='title'>Documentation Specialist</h4>
+                            <ul class='desc'>
+                                <li>Documented & revised 250+ operating procedures, authored library of 200+ email & live chat canned responses, developed custom website theme, organized and maintained internal knowledge base website for customer service center of 150+ employees.</li>
+                                <li>Assisted with testing, configuration & deployment of Bold360 live chat system.</li>
+                            </ul>
+                            <h4 class='title'>Customer Service Representative</h4>
+                            <ul class='desc'>
+                                <li>Assisted 12,000+ customers with resolving order errors and provided tailored consultations on fitness, supplements & nutrition as a top performing agent.</li>
+                            </ul>
+                        </div>
+                        <div class='exp' id='oit-exp'>
+                            <h3 class='timeline'><span class='month'>Jun</span> 2014 - <span class='month'>Feb</span> 2016</h3>
+                            <h3 class='name'>Office of Information Technology</h3>
+                            <h3 class='sub'>Boise State University</h3>
+                            <h4 class='title'>WordPress Support Analyst</h4>
+                            <ul class='desc'>
+                                <li>Created & configured new WordPress sites, installed & configured plugins, resolved support tickets and performed regular updates & maintenance on 740+ university websites.</li>
+                                <li>Trained 50+ faculty & staff members in one-on-one meetings on how to use WordPress, perform updates on their websites, and resolve errors.</li>
+                            </ul>
+                        </div>
+                        <div class='exp' id='sem-exp'>
+                            <h3 class='timeline'><span class='month'>Jun</span> 2012 - <span class='month'>Jun</span> 2014</h3>
+                            <h3 class='name'>SocialEyes Marketing</h3>
+                            <h4 class='title'>Website Designer & Developer</h4>
+                            <ul class='desc'>
+                                <li>Assembled and managed a small team of website designers & developers that built 75+ custom WordPress themes for a variety of local & national clients.</li>
+                                <li>Created logos, business cards, brochures, flyers, restaurant menus, wine labels, and more using Adobe Photoshop and Illustrator.</li>
+                            </ul>
+                            <h4 class='title'>Student Intern</h4>
+                            <ul class='desc'>
+                                <li>Completed 280-hour internship building embedded microsites using HTML, CSS, JavaScript, jQuery and designing social media marketing & branding assets.</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>

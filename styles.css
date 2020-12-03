@@ -399,85 +399,6 @@ section:last-child {
 #top-arrow:focus .bar {
     background-color:#ffd400;
 }
-.block {
-    border-left:1px solid #fff;
-    margin:5em 0;
-    padding-left:2em;
-}
-.block h3,
-.block h4,
-.block h5,
-.block li {
-    cursor:default;
-    transition:all 200ms;
-}
-.block h3 {
-    color:rgba(255, 255, 255, 0.5);
-    font-size:3em;
-    font-weight:bold;
-    line-height:1em;
-    margin:0 0 0.25em;
-}
-.block h4 {
-    font-size:2em;
-    font-weight:normal;
-    line-height:1em;
-    margin:0.25em 0;
-}
-.block h5 {
-    font-size:1.2em;
-    font-weight:bold;
-    margin:0;
-}
-.block ul {
-    color:rgba(255, 255, 255, 0.5);
-    list-style:none;
-    margin:1em 0;
-    padding:0;
-}
-.block li {
-    transition:all 200ms;
-}
-.block.bbcom {
-    border-color:#00aeef;
-}
-.block.bbcom h4 {
-    color:#00aeef;
-}
-.block.bsu {
-    border-color:#d64309;
-}
-.block.bsu button:hover {
-    background-color:#d64309;
-    border-color:#d64309;
-    color:#fff;
-}
-.block.bsu h4 {
-    color:#d64309;
-}
-.block.bsub {
-    border-color:#0033a0;
-}
-.block.bsub h4 {
-    color:#0033a0;
-}
-.block.mtchs {
-    border-color:#b52022;
-}
-.block.mtchs button:hover {
-    background-color:#b52022;
-    border-color:#b52022;
-    color:#fff;
-}
-.block.mtchs h4 {
-    color:#b52022;
-}
-.block.sem {
-    border-color:#5cb1e2;
-}
-.block.sem h4 {
-    color:#5cb1e2;
-}
 .button {
     background-color:#fff;
     border-radius:8px;
@@ -519,9 +440,6 @@ section:last-child {
 }
 .caption.hide {
     margin:0;
-}
-.col {
-    padding:4em;
 }
 .cta {
     background:none;
