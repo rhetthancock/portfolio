@@ -1,13 +1,13 @@
 var ELEMENT_ID = 'job-title';
 var STATE = 1;
 var titles = [
-    'computer scientist',
     'full-stack developer',
     'software engineer',
     'front-end developer',
     'web developer',
     'computer programmer',
     'web designer',
+    'computer scientist',
     'ux engineer',
     'graphic designer'
 ];
