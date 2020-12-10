@@ -282,6 +282,9 @@ section:last-child {
 #nav a:hover {
     color:#fff;
 }
+#nav a:active {
+    color:#ffd400;
+}
 #nav a.box {
     border:1px solid;
     border-radius:4px;
