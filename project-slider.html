@@ -1,0 +1,292 @@
+<!doctype html>
+<html>
+<head>
+    <title>Project Test</title>
+    <link href='https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;700;900&display=swap' rel='stylesheet'>
+    <link href='styles.css' rel='stylesheet' type='text/css'>
+    <style>
+        #projects {
+            display:block;
+        }
+        .arrow {
+            cursor:pointer;
+            flex-shrink:0;
+            height:80px;
+            opacity:0;
+            position:relative;
+            transition:all 200ms;
+            visibility:hidden;
+            width:80px;
+        }
+        .arrow::after,
+        .arrow::before {
+            background-color:#666;
+            content:'';
+            display:block;
+            height:4px;
+            position:absolute;
+            transition:all 200ms;
+            top:45%;
+            width:50%;
+        }
+        .arrow::after {
+            right:9%;
+            transform:rotate(45deg);
+        }
+        .arrow::before {
+            left:9%;
+            transform:rotate(-45deg);
+        }
+        .arrow:hover::after,
+        .arrow:hover::before {
+            background-color:#fff;
+        }
+        .arrow.active {
+            opacity:1;
+            visibility:visible;
+        }
+        .arrow.left {
+            transform:rotate(-90deg);
+        }
+        .arrow.right {
+            transform:rotate(90deg);
+        }
+        .project {
+            flex-shrink:0;
+            width:525px;
+        }
+        .reel {
+            display:flex;
+            left:0;
+            padding-bottom:5px;
+            transition:all 300ms;
+        } 
+        .slider {
+            align-items:center;
+            display:flex;
+            justify-content:center;
+        }
+        .view {
+            overflow:hidden;
+            position:relative;
+        }
+    </style>
+    <script>
+        let scrollIndex = 0;
+        let pWidth;
+        let reel, showCount, projectCount;
+
+        function checkArrows() {
+            // Handle left arrow
+            let left = document.getElementById('projects-left');
+            if(scrollIndex > 0)  {
+                left.classList.add('active');
+            }
+            else {
+                left.classList.remove('active');
+            }
+
+            // Handle right arrow
+            let right = document.getElementById('projects-right');
+            if(scrollIndex + showCount >= projectCount) {
+                right.classList.remove('active');
+            }
+            else {
+                right.classList.add('active');
+            }
+        }
+
+        function scrollLeft() {
+            if(scrollIndex > 0) {
+                scrollIndex--;
+                setScrollPosition();
+            }
+            checkArrows();
+        }
+
+        function scrollRight() {
+            if(scrollIndex + showCount < projectCount) {
+                scrollIndex++;
+                setScrollPosition();
+            }
+            checkArrows();
+        }
+
+        function sliderInit() {
+            // Set projects count
+            reel = document.getElementById('projects-reel');
+            let projects = reel.children;
+            projectCount = projects.length;
+
+            // Set arrow listeners
+            let arrow_left = document.getElementById('projects-left');
+            let arrow_right = document.getElementById('projects-right');
+            arrow_left.addEventListener('click', scrollLeft);
+            arrow_right.addEventListener('click', scrollRight);
+
+            // Set width of view
+            setViewSize();
+            
+            // Show right arrow
+            if(showCount < projects.length) {
+                arrow_right.classList.add('active');
+            }
+        }
+
+        function setScrollPosition() {
+            if(scrollIndex == 0) {
+                reel.style.marginLeft = 0;
+            }
+            else {
+                reel.style.marginLeft = '-' + scrollIndex * pWidth + 'px';
+            }
+        }
+
+        function setViewSize() {
+            let slider = document.getElementById('projects-slider');
+            let view = document.getElementById('projects-view');
+            let aWidth = slider.getElementsByClassName('arrow')[0].offsetWidth;
+            let project = reel.children[0];
+            let maxSpace = slider.offsetWidth - (aWidth * 2);
+            let pcss = window.getComputedStyle(project);
+            pWidth = project.offsetWidth + parseInt(pcss.marginLeft) + parseInt(pcss.marginRight);
+            showCount = Math.floor(maxSpace / pWidth);
+            if(showCount < projectCount) {
+                view.style.width = (showCount * pWidth) + 'px';
+            }
+            else {
+                view.style.width = '';
+            }
+        }
+
+        function sliderResize() {
+            setViewSize();
+            if(scrollIndex + showCount > projectCount) {
+                let diff = projectCount - showCount;
+                if(diff < 0) {
+                    scrollIndex = 0;
+                }
+                else {
+                    scrollIndex = diff;
+                }
+                setScrollPosition();
+            }
+            checkArrows();
+        }
+
+        window.addEventListener('load', sliderInit);
+        window.addEventListener('resize', sliderResize);
+    </script>
+</head>
+<body>
+    <section id='projects'>
+        <h2>Featured Projects</h2>
+        <div class='slider' id='projects-slider'>
+            <div class='arrow left' id='projects-left'></div>
+            <div class='view' id='projects-view'>
+                <div class='reel' id='projects-reel'>
+                    <div class='project'>
+                        <div class='thumb'>
+                            <img alt='MSweeper Thumbnail' class='' src='images/thumb-msweeper.png'>
+                        </div>
+                        <a class='button' href='http://astro-trivia.com/msweeper/' target='_blank' title='View MSWEEPER'>View Project</a>
+                        <div class='project-desc'>
+                            <h3>MSWEEPER</h3>
+                            <h4>Personal Programming Project, Spring 2020</h4>
+                            <p>Redesigned & recreated the popular Minesweeper computer game as a browser app playable on desktop &amp; mobile.</p>
+                            <ul>
+                                <li>Node.js</li>
+                                <li>Express.js</li>
+                                <li>SocketIO</li>
+                                <li>JavaScript</li>
+                                <li>HTML</li>
+                                <li>CSS</li>
+                            </ul>
+                        </div>
+                        <a class='git-link' href='https://github.com/rhetthancock/msweeper' target='_blank'></a>
+                    </div>
+                    <div class='project'>
+                        <div class='thumb'>
+                            <img alt='3D Terrain Generator Thumbnail' src='images/thumb-terrain.png'>
+                        </div>
+                        <a class='button' href='http://astro-trivia.com/terrain/' target='_blank' title='View 3D Terrain Generator'>View Project</a>
+                        <div class='project-desc'>
+                            <h3>3D Terrain Generator</h3>
+                            <h4>Computer Graphics Course Project, Fall 2019</h4>
+                            <p>Created 3D terrain generation algorithm & visualizer tool with realistic dynamically generated directional lighting &amp; custom shaders.</p>
+                            <ul>
+                                <li>WebGL</li>
+                                <li>JavaScript</li>
+                                <li>HTML</li>
+                                <li>CSS</li>
+                            </ul>
+                        </div>
+                        <a class='git-link' href='https://github.com/rhetthancock/terrain-generator' target='_blank'></a>
+                    </div>
+                    <div class='project'>
+                        <div class='thumb'>
+                            <img alt='Astro-Trivia.com Thumbnail' src='images/thumb-astrotrivia.png'>
+                        </div>
+                        <a class='button' href='http://astro-trivia.com/' target='_blank' title='View Astro-Trivia.com'>View Project</a>
+                        <div class='project-desc'>
+                            <h3>Astro-Trivia.com</h3>
+                            <h4>Web Development Course Project, Fall 2019</h4>
+                            <p>Designed & developed astronomy trivia website with dynamically generated questions and account registration & login system.</p>
+                            <ul>
+                                <li>PHP</li>
+                                <li>SQL</li>
+                                <li>JavaScript</li>
+                                <li>jQuery</li>
+                                <li>AJAX</li>
+                                <li>HTML</li>
+                                <li>CSS</li>
+                            </ul>
+                        </div>
+                        <a class='git-link' href='https://github.com/rhetthancock/Astro-Trivia' target='_blank'></a>
+                    </div>
+                    <div class='project'>
+                        <div class='thumb'>
+                            <img alt='Micron Global Quality Crossword Thumbnail' src='images/thumb-crossword.png'>
+                        </div>
+                        <a class='button' href='crossword.html' target='_blank' title='View Micron Crossword'>View Project</a>
+                        <div class='project-desc'>
+                            <h3>Micron Global Quality Crossword</h3>
+                            <h4>Senior Design Project, Fall 2019</h4>
+                            <p>Designed & developed the front-end for a custom online crossword puzzle app for the Micron Global Quality Assurance Department.</p>
+                            <ul>
+                                <li>Adobe XD</li>
+                                <li>JavaScript</li>
+                                <li>HTML</li>
+                                <li>CSS</li>
+                            </ul>
+                        </div>
+                        <a class='git-link' href='https://github.com/rhetthancock/crossword' target='_blank'></a>
+                    </div>
+                    <div class='project'>
+                        <div class='thumb'>
+                            <img alt='Micron Global Quality Crossword Thumbnail' src='images/thumb-crossword.png'>
+                        </div>
+                        <a class='button' href='crossword.html' target='_blank' title='View Micron Crossword'>View Project</a>
+                        <div class='project-desc'>
+                            <h3>Micron Global Quality Crossword</h3>
+                            <h4>Senior Design Project, Fall 2019</h4>
+                            <p>Designed & developed the front-end for a custom online crossword puzzle app for the Micron Global Quality Assurance Department.</p>
+                            <ul>
+                                <li>Adobe XD</li>
+                                <li>JavaScript</li>
+                                <li>HTML</li>
+                                <li>CSS</li>
+                            </ul>
+                        </div>
+                        <a class='git-link' href='https://github.com/rhetthancock/crossword' target='_blank'></a>
+                    </div>
+                </div>
+            </div>
+            <div class='arrow right' id='projects-right'></div>
+        </div>
+        <div class='fullwidth'>
+            <a class='cta' href='#about'>Learn About Me</a>
+        </div>
+    </section>
+</body>
+</html>
