@@ -7,6 +7,7 @@
     <script src='background.js'></script>
     <script src='navigation.js'></script>
     <script src='type-title.js'></script>
+    <script src='slider.js'></script>
     <script src='img-hover.js'></script>
     <script src='tabs.js'></script>
 </head>
@@ -44,85 +45,94 @@
     </section>
     <section id='projects'>
         <h2>Featured Projects</h2>
-        <div class='project'>
-            <div class='thumb'>
-                <img alt='MSweeper Thumbnail' class='' src='images/thumb-msweeper.png'>
+        <div class='slider' id='projects-slider'>
+            <div class='arrow left' id='projects-left'></div>
+            <div class='view' id='projects-view'>
+                <div class='reel' id='projects-reel'>
+                    <div class='project'>
+                        <div class='thumb'>
+                            <img alt='MSweeper Thumbnail' class='' src='images/thumb-msweeper.png'>
+                        </div>
+                        <a class='button' href='http://astro-trivia.com/msweeper/' target='_blank' title='View MSWEEPER'>View Project</a>
+                        <div class='project-desc'>
+                            <h3>MSWEEPER</h3>
+                            <h4>Personal Programming Project, Spring 2020</h4>
+                            <p>Redesigned & recreated the popular Minesweeper computer game as a browser app playable on desktop &amp; mobile.</p>
+                            <ul>
+                                <li>Node.js</li>
+                                <li>Express.js</li>
+                                <li>SocketIO</li>
+                                <li>JavaScript</li>
+                                <li>HTML</li>
+                                <li>CSS</li>
+                            </ul>
+                        </div>
+                        <a class='git-link' href='https://github.com/rhetthancock/msweeper' target='_blank'></a>
+                    </div>
+                    <div class='project'>
+                        <div class='thumb'>
+                            <img alt='3D Terrain Generator Thumbnail' src='images/thumb-terrain.png'>
+                        </div>
+                        <a class='button' href='http://astro-trivia.com/terrain/' target='_blank' title='View 3D Terrain Generator'>View Project</a>
+                        <div class='project-desc'>
+                            <h3>3D Terrain Generator</h3>
+                            <h4>Computer Graphics Course Project, Fall 2019</h4>
+                            <p>Created 3D terrain generation algorithm & visualizer tool with realistic dynamically generated directional lighting &amp; custom shaders.</p>
+                            <ul>
+                                <li>WebGL</li>
+                                <li>JavaScript</li>
+                                <li>HTML</li>
+                                <li>CSS</li>
+                            </ul>
+                        </div>
+                        <a class='git-link' href='https://github.com/rhetthancock/terrain-generator' target='_blank'></a>
+                    </div>
+                    <div class='project'>
+                        <div class='thumb'>
+                            <img alt='Astro-Trivia.com Thumbnail' src='images/thumb-astrotrivia.png'>
+                        </div>
+                        <a class='button' href='http://astro-trivia.com/' target='_blank' title='View Astro-Trivia.com'>View Project</a>
+                        <div class='project-desc'>
+                            <h3>Astro-Trivia.com</h3>
+                            <h4>Web Development Course Project, Fall 2019</h4>
+                            <p>Designed & developed astronomy trivia website with dynamically generated questions and account registration & login system.</p>
+                            <ul>
+                                <li>PHP</li>
+                                <li>SQL</li>
+                                <li>JavaScript</li>
+                                <li>jQuery</li>
+                                <li>AJAX</li>
+                                <li>HTML</li>
+                                <li>CSS</li>
+                            </ul>
+                        </div>
+                        <a class='git-link' href='https://github.com/rhetthancock/Astro-Trivia' target='_blank'></a>
+                    </div>
+                    <div class='project'>
+                        <div class='thumb'>
+                            <img alt='Micron Global Quality Crossword Thumbnail' src='images/thumb-crossword.png'>
+                        </div>
+                        <a class='button' href='crossword.html' target='_blank' title='View Micron Crossword'>View Project</a>
+                        <div class='project-desc'>
+                            <h3>Micron Global Quality Crossword</h3>
+                            <h4>Senior Design Project, Fall 2019</h4>
+                            <p>Designed & developed the front-end for a custom online crossword puzzle app for the Micron Global Quality Assurance Department.</p>
+                            <ul>
+                                <li>Adobe XD</li>
+                                <li>JavaScript</li>
+                                <li>HTML</li>
+                                <li>CSS</li>
+                            </ul>
+                        </div>
+                        <a class='git-link' href='https://github.com/rhetthancock/crossword' target='_blank'></a>
+                    </div>
+                </div>
             </div>
-            <a class='button' href='http://astro-trivia.com/msweeper/' target='_blank' title='View MSWEEPER'>View Project</a>
-            <div class='project-desc'>
-                <h3>MSWEEPER</h3>
-                <h4>Personal Programming Project, Spring 2020</h4>
-                <p>Redesigned & recreated the popular Minesweeper computer game as a browser app playable on desktop &amp; mobile.</p>
-                <ul>
-                    <li>Node.js</li>
-                    <li>Express.js</li>
-                    <li>SocketIO</li>
-                    <li>JavaScript</li>
-                    <li>HTML</li>
-                    <li>CSS</li>
-                </ul>
-            </div>
-            <a class='git-link' href='https://github.com/rhetthancock/msweeper' target='_blank'></a>
-        </div>
-        <div class='project'>
-            <div class='thumb'>
-                <img alt='3D Terrain Generator Thumbnail' src='images/thumb-terrain.png'>
-            </div>
-            <a class='button' href='http://astro-trivia.com/terrain/' target='_blank' title='View 3D Terrain Generator'>View Project</a>
-            <div class='project-desc'>
-                <h3>3D Terrain Generator</h3>
-                <h4>Computer Graphics Course Project, Fall 2019</h4>
-                <p>Created 3D terrain generation algorithm & visualizer tool with realistic dynamically generated directional lighting &amp; custom shaders.</p>
-                <ul>
-                    <li>WebGL</li>
-                    <li>JavaScript</li>
-                    <li>HTML</li>
-                    <li>CSS</li>
-                </ul>
-            </div>
-            <a class='git-link' href='https://github.com/rhetthancock/terrain-generator' target='_blank'></a>
-        </div>
-        <div class='project'>
-            <div class='thumb'>
-                <img alt='Astro-Trivia.com Thumbnail' src='images/thumb-astrotrivia.png'>
-            </div>
-            <a class='button' href='http://astro-trivia.com/' target='_blank' title='View Astro-Trivia.com'>View Project</a>
-            <div class='project-desc'>
-                <h3>Astro-Trivia.com</h3>
-                <h4>Web Development Course Project, Fall 2019</h4>
-                <p>Designed & developed astronomy trivia website with dynamically generated questions and account registration & login system.</p>
-                <ul>
-                    <li>PHP</li>
-                    <li>SQL</li>
-                    <li>JavaScript</li>
-                    <li>jQuery</li>
-                    <li>AJAX</li>
-                    <li>HTML</li>
-                    <li>CSS</li>
-                </ul>
-            </div>
-            <a class='git-link' href='https://github.com/rhetthancock/Astro-Trivia' target='_blank'></a>
-        </div>
-        <div class='project'>
-            <div class='thumb'>
-                <img alt='Micron Global Quality Crossword Thumbnail' src='images/thumb-crossword.png'>
-            </div>
-            <a class='button' href='crossword.html' target='_blank' title='View Micron Crossword'>View Project</a>
-            <div class='project-desc'>
-                <h3>Micron Global Quality Crossword</h3>
-                <h4>Senior Design Project, Fall 2019</h4>
-                <p>Designed & developed the front-end for a custom online crossword puzzle app for the Micron Global Quality Assurance Department.</p>
-                <ul>
-                    <li>Adobe XD</li>
-                    <li>JavaScript</li>
-                    <li>HTML</li>
-                    <li>CSS</li>
-                </ul>
-            </div>
-            <a class='git-link' href='https://github.com/rhetthancock/crossword' target='_blank'></a>
+            <div class='arrow right' id='projects-right'></div>
         </div>
         <div class='fullwidth'>
             <a class='cta' href='#about'>Learn About Me</a>
+        </div>
         </div>
     </section>
     <section id='about'>

@@ -351,11 +351,6 @@ section:last-child {
     color:#000;
 }
 #projects {
-    align-content:center;
-    align-items:center;
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
     min-height:100%;
 }
 #projects .cta {
@@ -448,6 +443,49 @@ section:last-child {
 }
 #top-arrow:focus .bar {
     background-color:#ffd400;
+}
+.arrow {
+    cursor:pointer;
+    flex-shrink:0;
+    height:80px;
+    opacity:0;
+    position:relative;
+    transition:all 200ms;
+    visibility:hidden;
+    width:80px;
+}
+.arrow::after,
+.arrow::before {
+    background-color:#666;
+    content:'';
+    display:block;
+    height:4px;
+    position:absolute;
+    transition:all 200ms;
+    top:45%;
+    width:50%;
+}
+.arrow::after {
+    right:9%;
+    transform:rotate(45deg);
+}
+.arrow::before {
+    left:9%;
+    transform:rotate(-45deg);
+}
+.arrow:hover::after,
+.arrow:hover::before {
+    background-color:#fff;
+}
+.arrow.active {
+    opacity:1;
+    visibility:visible;
+}
+.arrow.left {
+    transform:rotate(-90deg);
+}
+.arrow.right {
+    transform:rotate(90deg);
 }
 .block {
     display:flex;
@@ -627,8 +665,9 @@ section:last-child {
 .project {
     border:1px solid rgba(255, 255, 255, 0.1);
     border-radius:15px;
+    flex-shrink:0;
     margin:20px;
-    max-width:525px;
+    width:525px;
     position:relative;
 }
 .project .button {
@@ -671,6 +710,17 @@ section:last-child {
     border-top:1px solid rgba(255, 255, 255, 0.1);
     padding:50px 20px 15px;
     position:relative;
+}
+.reel {
+    display:flex;
+    left:0;
+    padding-bottom:5px;
+    transition:all 300ms;
+}
+.slider {
+    align-items:center;
+    display:flex;
+    justify-content:center;
 }
 .sub {
     font-size:30px;
@@ -752,4 +802,8 @@ section:last-child {
     display:block;
     margin:4px;
     padding:5px 10px;
+}
+.view {
+    overflow:hidden;
+    position:relative;
 }
